@@ -1,0 +1,34 @@
+#header {
+    height: 10vh;
+    background-color: var(--orange);
+}
+
+#logotype {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#add-button {
+    border: none;
+    background-color: var(--orange);
+    border-radius: 999px;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#add-button:hover {
+    cursor: pointer;
+    background-color: var(--orange-hover);
+    transition: all 0.3s ease;
+}
+
+#add-button svg {
+    width: 2.5rem;
+    height: auto;
+}

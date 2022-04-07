@@ -1,0 +1,26 @@
+@import url('./css/global.css');
+
+:root {
+    --button-size: 42px;
+    --border-radius: 0.8rem;
+    --bg-grey: #F2F2F1;
+    --grey-hover: #E2E2E1;
+    --light-grey:#FAFAFA;
+    --fill-main: #48484A;
+    --orange: #FF8159;
+    --orange-hover: #FF6435;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Serif Pro', serif, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
