@@ -1,0 +1,36 @@
+#new-entry-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+#new-entry-form h2 {
+    /* margin-bottom: 0.2rem; */
+}
+
+#new-entry-form input, 
+#new-entry-form textarea {
+    background-color: var(--light-grey);
+    border: none;
+    padding: 0.8rem;
+    font-family: "Work Sans", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+
+#new-entry-form textarea {
+    resize: vertical;
+    border-bottom-right-radius: 0;
+    line-height: 2;
+}
+
+#new-entry-form input:focus,
+#new-entry-form textarea:focus {
+    outline: 2px solid var(--orange);
+}

@@ -1,12 +1,13 @@
 @import url('./css/global.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
     --button-size: 42px;
     --border-radius: 0.8rem;
     --bg-grey: #F2F2F1;
     --grey-hover: #E2E2E1;
-    --light-grey:#FAFAFA;
     --fill-main: #48484A;
+    --light-grey:#F1F1F1;
     --orange: #FF8159;
     --orange-hover: #FF6435;
 }
