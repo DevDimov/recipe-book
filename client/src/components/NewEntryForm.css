@@ -1,13 +1,10 @@
 #new-entry-form {
-    width: 100%;
+    width: min(100%, 600px);
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
     box-sizing: border-box;
-}
-
-#new-entry-form h2 {
-    /* margin-bottom: 0.2rem; */
+    row-gap: 1rem;
 }
 
 #new-entry-form input, 

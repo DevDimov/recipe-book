@@ -1,29 +1,53 @@
 import './NewEntryForm.css'
+import InputText from './InputText'
 
 const NewEntryForm = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('You clicked submit.');
+    }
+
     return (
-        <form id="new-entry-form">
+        <form
+            id="new-entry-form"
+            onSubmit={handleSubmit}
+        >
             <button>Upload photo</button>
 
-            <label for="name"><h2>Name</h2></label>
-            <input type="text" id="name" name="name" required/>
+            <div>
+                <label htmlFor="name"><h2>Name</h2></label>
+                <input type="text" id="name" name="name" required />
+            </div>
 
+            <div>
+                <h2>Category</h2>
+                <InputText
+                    suggestions={['Breakfast', 'Desert', 'High-Protein', 'Main meal', 'Snack', 'Vegetarian', 'Vegan']}
+                />
+            </div>
 
-            <h2>Category</h2>
-            <option>Breakfast</option>
-            <option>Desert</option>
+            <div>
+                <label htmlFor="prep-time"><h2>Preparation time</h2></label>
+                <input type="number" id="prep-time" name="prep-time" min="5" max="90" step="5" defaultValue="5" required />
+            </div>
 
-            <label for="prep-time"><h2>Preparation time</h2></label>
-            <input type="number" id="prep-time" name="prep-time" min="5" max="90" step="5" value="5" required/>
-            
-            <label for="servings"><h2>Servings</h2></label>
-            <input type="number" id="servings" name="servings" min="1" max="8" step="1" value="2" required/>
-            
-            <label for="ingredients"><h2>Ingredients</h2></label>
-            <textarea id="ingredients" name="ingredients" rows="10" maxlength="1000" resize="vertical" required/>
-            
-            <h2>Method</h2>
+            <div>
+                <label htmlFor="servings"><h2>Servings</h2></label>
+                <input type="number" id="servings" name="servings" min="1" max="8" step="1" defaultValue="2" required />
+            </div>
 
+            <div>
+                <label htmlFor="ingredients"><h2>Ingredients</h2></label>
+                <textarea id="ingredients" name="ingredients" rows="10" maxLength="1000" resize="vertical" required />
+            </div>
+
+            <div>
+                <h2>Method</h2>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
         </form>
 
     )

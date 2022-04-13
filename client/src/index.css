@@ -4,17 +4,18 @@
 :root {
     --button-size: 42px;
     --border-radius: 0.8rem;
-    --bg-grey: #F2F2F1;
+    --grey: #F2F2F1;
     --grey-hover: #E2E2E1;
-    --fill-main: #48484A;
     --light-grey:#F1F1F1;
+    --fill-main: #48484A;
+    --charcoal: #555555;
     --orange: #FF8159;
     --orange-hover: #FF6435;
 }
 
 body {
   margin: 0;
-  font-family: 'Source Serif Pro', serif, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Source Serif Pro', 'Work Sans', serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,26 @@
+#InputSuggestions {
+    position: absolute;
+    padding: 0;
+    font-family: 'Work Sans', serif;
+    width: 50%;
+    max-height: 180px;
+    overflow-y: auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.10);
+    border-radius: 0.5rem;
+}
+
+#InputSuggestions li {
+    list-style-type: none;
+    border-bottom: 1px solid var(--grey);
+    padding: 0.5rem 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+#InputSuggestions li:hover {
+    background-color: var(--light-grey);
+}
+
+#InputSuggestions li.selected {
+    background-color: var(--light-grey);
+}
