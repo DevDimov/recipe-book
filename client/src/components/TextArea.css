@@ -1,0 +1,20 @@
+#TextArea {
+    display: flex;
+    flex-direction: column;
+}
+
+#TextArea #instruction-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#TextArea #buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.Instruction {
+    margin-bottom: 1.2rem;
+}

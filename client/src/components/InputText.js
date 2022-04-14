@@ -54,6 +54,11 @@ const InputText = ({ suggestions }) => {
         }
     }
 
+    const onRemove = (categoryName) => {
+        let newCategories = categories.filter(category => category !== categoryName)
+        setCategories(newCategories)
+    }
+
     return (
         <div className="flex-center-column">
             
@@ -63,6 +68,7 @@ const InputText = ({ suggestions }) => {
                         <CategoryLabel
                             key={category}
                             text={category}
+                            onRemove={onRemove}
                         />
                     )
                 })}

@@ -1,5 +1,6 @@
 import './NewEntryForm.css'
 import InputText from './InputText'
+import TextArea from './TextArea'
 
 const NewEntryForm = () => {
 
@@ -16,8 +17,8 @@ const NewEntryForm = () => {
             <button>Upload photo</button>
 
             <div>
-                <label htmlFor="name"><h2>Name</h2></label>
-                <input type="text" id="name" name="name" required />
+                <label htmlFor="recipeName"><h2>Name</h2></label>
+                <input type="text" name="recipeName" defaultValue='Test' required />
             </div>
 
             <div>
@@ -39,11 +40,12 @@ const NewEntryForm = () => {
 
             <div>
                 <label htmlFor="ingredients"><h2>Ingredients</h2></label>
-                <textarea id="ingredients" name="ingredients" rows="10" maxLength="1000" resize="vertical" required />
+                <textarea id="ingredients" name="ingredients" rows="10" maxLength="1000" resize="vertical" defaultValue='Test' required />
             </div>
 
             <div>
                 <h2>Method</h2>
+                <TextArea />
             </div>
             <div>
                 <button type="submit">Submit</button>

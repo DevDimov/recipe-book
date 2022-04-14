@@ -19,10 +19,10 @@
     outline: none;
     box-sizing: border-box;
     border-radius: 0.5rem;
+    resize: vertical;
 }
 
-#new-entry-form textarea {
-    resize: vertical;
+#new-entry-form textarea#ingredients {
     border-bottom-right-radius: 0;
     line-height: 2;
 }
@@ -30,4 +30,27 @@
 #new-entry-form input:focus,
 #new-entry-form textarea:focus {
     outline: 2px solid var(--orange);
+}
+
+.textarea-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.textarea-container.hidden {
+    opacity: 0;
+}
+
+.textarea-container div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.textarea-container div h2 {
+    color: #999;
 }

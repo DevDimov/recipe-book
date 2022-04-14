@@ -8,8 +8,9 @@
 
 #categories-container {
     display: flex;
+    flex-flow: row wrap;
     align-self: flex-start;
-    gap: 0.5rem;
+    column-gap: 0.5rem;
 }
 
 #suggestions-container {
