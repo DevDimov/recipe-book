@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './InputText.css'
 
 import addIcon from '../icons/add_black_48dp.svg'
@@ -7,7 +7,9 @@ import InputSuggestions from './InputSuggestions'
 import CategoryLabel from './CategoryLabel'
 
 
-const InputText = ({ suggestions }) => {
+const InputText = ({ accessRef, suggestions }) => {
+
+    const [categories, setCategories] = useState([])
 
     const [state, setState] = useState({
         userInput: '',
@@ -16,9 +18,11 @@ const InputText = ({ suggestions }) => {
         showSuggestions: false
     })
 
-    const [categories, setCategories] = useState([])
-
     const inputRef = useRef()
+
+    useEffect(() => {
+        accessRef.current = categories
+    }, [categories])
 
     const onChange = (e) => {
         const userInput = e.currentTarget.value;
@@ -61,7 +65,7 @@ const InputText = ({ suggestions }) => {
 
     return (
         <div className="flex-center-column">
-            
+
             <div id="categories-container">
                 {categories.map((category) => {
                     return (
@@ -84,6 +88,7 @@ const InputText = ({ suggestions }) => {
                     value={state.userInput}
                 />
                 <ButtonTextIcon
+                    type="button"
                     text="Add"
                     iconPath={addIcon}
                     handleOnClick={onAdd}

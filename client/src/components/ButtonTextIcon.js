@@ -1,14 +1,15 @@
 import './ButtonTextIcon.css'
 
-const ButtonTextIcon = ({ text, iconPath, handleOnClick }) => {
+const ButtonTextIcon = ({ type, text, iconPath, handleOnClick }) => {
 
     return (
         <button
+            type={type}
             className="ButtonTextIcon"
             onClick={handleOnClick}
         >
             {text}
-            <img 
+            <img
                 src={iconPath}
                 alt=""
             />

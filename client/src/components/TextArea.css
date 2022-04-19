@@ -12,7 +12,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem 0;
+    margin: 1rem 0 4rem 0;
+}
+
+#TextArea #buttons-container button {
+    margin-inline: 0;
 }
 
 .Instruction {

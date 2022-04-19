@@ -6,11 +6,10 @@ import addIcon from '../icons/add_black_48dp.svg'
 import closeIcon from '../icons/close_black_48dp.svg'
 
 
-const TextArea = () => {
+const TextArea = ({ accessRef }) => {
 
     const [value, setValue] = useState('')
     const [showPlaceholder, setShowPlaceholder] = useState(true)
-    const [stepCount, setStepCount] = useState(1)
     const [method, setMethod] = useState([])
 
     useEffect(() => {
@@ -21,6 +20,10 @@ const TextArea = () => {
         setShowPlaceholder(bool)
     }, [value])
 
+    useEffect(() => {
+        accessRef.current = method
+    }, [method])
+
     const handleOnChange = (e) => {
         setValue(e.target.value)
     }
@@ -30,10 +33,8 @@ const TextArea = () => {
         if (value) {
             input = value.trim()
             if (input.length > 1) {
-                const newMethod = [...method, { step: stepCount, text: input }]
+                const newMethod = [...method, input ]
                 setMethod(newMethod)
-                let newStepCount = stepCount + 1
-                setStepCount(newStepCount)
                 setValue('')
             }
         }
@@ -42,18 +43,16 @@ const TextArea = () => {
     const removeMethodStep = () => {
         let newMethod = method.slice(0, method.length - 1)
         setMethod(newMethod)
-        let newStepCount = stepCount - 1
-        setStepCount(newStepCount)
     }
 
     return (
         <div id="TextArea">
             <div id="instruction-container">
-                {method.length > 0 && method.map((data) => {
+                {method.length > 0 && method.map((data, index) => {
                     return (<Instruction
-                        key={data.step}
-                        step={data.step}
-                        text={data.text}
+                        key={data.slice(0,10)}
+                        step={index+1}
+                        text={data}
                     />)
                 })}
             </div>
@@ -64,12 +63,13 @@ const TextArea = () => {
                     maxLength="500"
                     onChange={handleOnChange}
                     value={value}
-                    required={stepCount === 1 ? true : false}
+                    required={method.length === 0 ? true : false}
                 />
-                {showPlaceholder && <div><h2>{stepCount + '.'}</h2></div>}
+                {showPlaceholder && <div><h2>{method.length + 1 + '.'}</h2></div>}
             </div >
             <div id="buttons-container">
                 <ButtonTextIcon
+                    type="button"
                     text='Add'
                     iconPath={addIcon}
                     handleOnClick={addMethodStep}

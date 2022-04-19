@@ -5,6 +5,7 @@
     padding: 1.5rem;
     box-sizing: border-box;
     row-gap: 1rem;
+    margin-bottom: 10rem;
 }
 
 #new-entry-form input, 
