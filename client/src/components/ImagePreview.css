@@ -1,0 +1,13 @@
+.squareContainer {
+    position: relative;
+    width: min(100%, 600px);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.squareContainer:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}

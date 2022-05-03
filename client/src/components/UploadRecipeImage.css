@@ -1,0 +1,26 @@
+.UploadRecipeImage {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+
+.imageUpload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.custom-file-input {
+    position: absolute;
+    box-sizing: border-box;
+    opacity: 0;
+    min-height: 2.8rem;
+    margin-inline: auto;
+}
+
+.custom-file-input:hover {
+    cursor: pointer;
+}

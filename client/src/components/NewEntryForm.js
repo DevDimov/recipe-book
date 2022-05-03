@@ -2,12 +2,14 @@ import { useState, useRef } from 'react'
 import './NewEntryForm.css'
 import InputText from './InputText'
 import TextArea from './TextArea'
+import UploadRecipeImage from './UploadRecipeImage'
+
 import ButtonPrimary from './ButtonPrimary'
 import ButtonSecondary from './ButtonSecondary'
 import ButtonTextIcon from './ButtonTextIcon'
 import uploadIcon from '../icons/file_upload_black_48dp.svg'
 
-const NewEntryForm = () => {
+const NewEntryForm = ({ toggleForm }) => {
 
     const imageRef = useRef('')
     const nameRef = useRef('')
@@ -34,22 +36,27 @@ const NewEntryForm = () => {
     const handleCancel = (e) => {
         e.preventDefault();
         console.log('You clicked Cancel.');
+        toggleForm()
     }
 
     const handleOnUploadPhoto = (e) => {
         e.preventDefault();
         console.log('You clicked Upload photo.');
+
     }
 
     return (
         <form id="new-entry-form" onSubmit={handleSubmit}>
 
-            <ButtonTextIcon
+            <UploadRecipeImage 
+                imageRef={imageRef}
+            />
+            {/* <ButtonTextIcon
                 type="button"
                 text="Upload image"
                 iconPath={uploadIcon}
                 handleOnClick={handleOnUploadPhoto}
-            />
+            /> */}
 
             <div>
                 <label htmlFor="recipeName"><h2>Name</h2></label>

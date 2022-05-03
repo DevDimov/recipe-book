@@ -1,16 +1,14 @@
 import './App.css';
 import Header from './components/Header'
-import AddButton from './components/AddButton';
-import NewEntryForm from './components/NewEntryForm';
+import AddNewRecipe from './components/AddNewRecipe';
 
 function App() {
-  return (
-    <div className="App">
-        <Header />
-        <AddButton />
-        <NewEntryForm />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <AddNewRecipe />
+        </div>
+    );
 }
 
 export default App;

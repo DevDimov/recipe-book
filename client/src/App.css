@@ -32,3 +32,23 @@
     width: 2.5rem;
     height: auto;
 }
+
+.ButtonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    border-radius: 999px;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ButtonIcon:hover {
+    cursor: pointer;
+    background-color: var(--grey-hover);
+    transition: all 0.3s ease;
+}

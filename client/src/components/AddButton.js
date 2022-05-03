@@ -1,7 +1,7 @@
-const AddButton = () => {
+const AddButton = ({ toggleForm }) => {
 
     return (
-        <button id="add-button" className="">
+        <button id="add-button" className="" onClick={toggleForm}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="48px"

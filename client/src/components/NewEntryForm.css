@@ -8,7 +8,8 @@
     margin-bottom: 10rem;
 }
 
-#new-entry-form input, 
+#new-entry-form input[type="text"],
+#new-entry-form input[type="number"], 
 #new-entry-form textarea {
     background-color: var(--light-grey);
     border: none;
