@@ -6,7 +6,6 @@ require('dotenv').config({ path: path.join(__dirname, 'config/.env') })
 const mongodb = require('./mongodb.js')
 const { MongoClient } = require('mongodb')
 const client = new MongoClient(process.env.MONGODB_URI)
-mongodb.main(client)
 
 // const fetch = require('node-fetch')
 
@@ -15,11 +14,34 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 
+app.use(express.static(path.join(__dirname, '../client/build'), { extensions: ['html', 'css', 'js', 'svg'] }))
+app.use(express.json());
+
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" })
 })
 
-// app.use(express.static(path.join(__dirname, '../client/build'), { extensions: ['html', 'css', 'js', 'svg'] }))
+
+
+app.post('/insert', async (req, res) => {
+    try {
+        // console.log((req.body))
+        const response = await mongodb.insertDocument(client, req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        // console.log(err.message)
+        return res.status(500).json(err)
+    }
+})
+
+app.post('/upsert', async (req, res) => {
+    try {
+        const response = await mongodb.upsertDocument(client, req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json(err)
+    }
+})
 
 // app.get('/api', async (req, res) => {
 //     try {

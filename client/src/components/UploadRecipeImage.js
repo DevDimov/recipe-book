@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './UploadRecipeImage.css'
 import ButtonTextIcon from './ButtonTextIcon'
 import uploadIcon from '../icons/file_upload_black_48dp.svg'
 import ImagePreview from './ImagePreview'
 
-const UploadRecipeImage = ({ imageRef }) => {
+const UploadRecipeImage = ({ image, setImage}) => {
 
-    const [image, setImage] = useState(null)
+    const imageRef = useRef()
 
     const selectImage = (e) => {
         e.preventDefault();
