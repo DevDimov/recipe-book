@@ -1,5 +1,5 @@
-import ButtonIcon from './ButtonIcon'
-import closeIcon from '../icons/close_black_48dp.svg'
+import ButtonIcon from './buttons/ButtonIcon'
+import closeIcon from '../icons/close.svg'
 import './ImagePreview.css'
 
 const ImagePreview = ({ src, onCloseImagePreview }) => {

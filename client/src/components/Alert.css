@@ -1,0 +1,11 @@
+.alert {
+    width: 100%;
+    min-height: 2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+
+.alert p {
+    text-align: center;
+    color: var(--orange);
+}

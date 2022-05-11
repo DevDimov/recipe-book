@@ -1,5 +1,5 @@
 import './CategoryLabel.css'
-import close from '../icons/close_black_48dp.svg'
+import close from '../icons/close.svg'
 
 const CategoryLabel = ({ text, onRemove }) => {
 

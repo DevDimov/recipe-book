@@ -1,16 +1,40 @@
-#new-entry-form {
+.container {
     width: min(100%, 600px);
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
     box-sizing: border-box;
     row-gap: 1rem;
-    margin-bottom: 10rem;
+    border: 2px solid var(--grey);
+    border-radius: 1.5rem;
+    margin: 5rem auto 10rem auto;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
+    background-color: #FFF;
 }
 
-#new-entry-form input[type="text"],
-#new-entry-form input[type="number"], 
-#new-entry-form textarea {
+.container > #arrowBackButton {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    background-color: transparent;
+}
+
+.container > #arrowBackButton:hover {
+    cursor: pointer;
+    /* color: var(--orange); */
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#newEntryForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+#newEntryForm input[type="text"],
+/* #newEntryForm input[type="number"],  */
+#newEntryForm textarea {
     background-color: var(--light-grey);
     border: none;
     padding: 0.8rem;
@@ -24,14 +48,15 @@
     resize: vertical;
 }
 
-#new-entry-form textarea#ingredients {
+#newEntryForm textarea#ingredients {
     border-bottom-right-radius: 0;
     line-height: 2;
 }
 
-#new-entry-form input:focus,
-#new-entry-form textarea:focus {
+#newEntryForm input:focus,
+#newEntryForm textarea:focus {
     outline: 2px solid var(--orange);
+    background-color: white;
 }
 
 .textarea-container {

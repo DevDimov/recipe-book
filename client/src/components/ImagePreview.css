@@ -6,6 +6,12 @@
     overflow: hidden;
 }
 
+.squareContainer .ButtonIcon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
 .squareContainer:after {
     content: "";
     display: block;

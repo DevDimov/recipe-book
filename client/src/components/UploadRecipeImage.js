@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './UploadRecipeImage.css'
-import ButtonTextIcon from './ButtonTextIcon'
-import uploadIcon from '../icons/file_upload_black_48dp.svg'
+import ButtonTextIcon from './buttons/ButtonTextIcon'
+import uploadIcon from '../icons/file_upload.svg'
 import ImagePreview from './ImagePreview'
 
 const UploadRecipeImage = ({ image, setImage}) => {

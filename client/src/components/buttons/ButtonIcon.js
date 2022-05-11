@@ -1,3 +1,5 @@
+import './ButtonIcon.css'
+
 const ButtonIcon = ({ type, iconPath, handleOnClick }) => {
 
     return (

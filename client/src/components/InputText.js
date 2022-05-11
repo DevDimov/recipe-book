@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import './InputText.css'
 
-import addIcon from '../icons/add_black_48dp.svg'
-import ButtonTextIcon from './ButtonTextIcon'
+import addIcon from '../icons/add.svg'
+import ButtonTextIcon from './buttons/ButtonTextIcon'
 import InputSuggestions from './InputSuggestions'
 import CategoryLabel from './CategoryLabel'
 

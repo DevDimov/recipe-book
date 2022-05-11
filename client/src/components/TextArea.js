@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import './TextArea.css'
 import Instruction from './Instruction'
-import ButtonTextIcon from './ButtonTextIcon'
-import addIcon from '../icons/add_black_48dp.svg'
-import closeIcon from '../icons/close_black_48dp.svg'
+import ButtonTextIcon from './buttons/ButtonTextIcon'
+import addIcon from '../icons/add.svg'
+import closeIcon from '../icons/close.svg'
 
 
 const TextArea = ({ accessRef }) => {

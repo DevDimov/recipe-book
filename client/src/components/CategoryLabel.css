@@ -14,20 +14,17 @@
 }
 
 .CategoryLabel button {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    border-radius: 0.5rem;
-    padding: 0.2rem;
     border: none;
+    display: flex;
+    padding: 0.2rem;
+    align-items: center;
+    border-radius: 0.5rem;
     color: var(--charcoal);
+    justify-content: center;
+    background-color: transparent;
 }
 
 .CategoryLabel button:hover {
     cursor: pointer;
     background-color: var(--light-grey);
-}
-
-button img {
-    width: 1.5rem;
 }

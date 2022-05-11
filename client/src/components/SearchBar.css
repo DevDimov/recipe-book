@@ -1,0 +1,33 @@
+.SearchBar {
+    display: flex;
+    margin: 4rem auto 1.5rem auto;
+    position: relative;
+    align-items: center;
+    width: min(80vw, 500px);
+}
+
+.SearchBar input {
+    width: 100%;
+    height: 4rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    box-sizing: border-box;
+    border: 2px solid var(--grey);
+    font-family: 'Work Sans', sans-serif;
+}
+
+.SearchBar input:focus {
+    border: 2px solid var(--orange);
+}
+
+.SearchBar .inputButtons {
+    right: 0;
+    display: flex;
+    column-gap: 0.2rem;
+    position: absolute;
+    align-items: center;
+    margin-right: 0.5rem;
+}

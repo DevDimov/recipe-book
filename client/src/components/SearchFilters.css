@@ -1,0 +1,11 @@
+#SearchFilters {
+    display: flex;
+    row-gap: 1rem;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: min(80vw, 500px);
+    background-color: #FFF;
+    border: 2px solid var(--grey);
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
+}
