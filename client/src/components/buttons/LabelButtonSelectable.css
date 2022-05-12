@@ -1,0 +1,38 @@
+.labelButtonContainer {
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: 0.5rem;
+}
+
+.LabelButtonSelectable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    color: var(--charcoal);
+    padding: 0 0.8rem;
+    border: 2px solid var(--light-grey);
+    font-family: "Work Sans", sans-serif;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.LabelButtonSelectable:hover {
+    border: 2px solid var(--orange);
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+label {
+    color: white;
+    background-color: var(--orange);
+    border: 2px solid var(--orange);
+    transition: all 0.3s ease;
+}

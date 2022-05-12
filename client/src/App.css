@@ -42,3 +42,11 @@ button img {
     font-weight: 400;
     font-size: 1rem;
 }
+
+input::placeholder,
+textarea::placeholder {
+    font-weight: 500;
+    font-style: italic;
+    color: #000;
+    opacity: 0.3;
+}

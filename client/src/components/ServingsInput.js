@@ -1,13 +1,20 @@
+import { useRef, useEffect } from 'react'
 import './inputNumber.css'
 
-const PrepTimeInput = () => {
+const ServingsInput = ({ accessRef }) => {
+
+    const inputRef = useRef()
+
+    useEffect(() => {
+        accessRef.current = inputRef.current
+    }, [inputRef])
 
     return (
         <label>
             <h2>Servings</h2>
             <div className="inputNumber">
                 <input
-                    ref={null}
+                    ref={inputRef}
                     type="number"
                     id="servings"
                     name="servings"
@@ -23,4 +30,4 @@ const PrepTimeInput = () => {
     )
 }
 
-export default PrepTimeInput
+export default ServingsInput

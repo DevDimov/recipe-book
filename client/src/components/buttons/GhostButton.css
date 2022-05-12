@@ -1,6 +1,6 @@
-.ButtonPrimary {
-    background-color: var(--orange);
-    color: #FFF;
+.GhostButton {
+    background-color: transparent;
+    color: #000;
     font-family: 'Work Sans';
     font-size: 1rem;
     font-weight: 500;
@@ -12,7 +12,7 @@
     margin-inline: auto;
 }
 
-.ButtonPrimary:hover {
+.GhostButton:hover {
     cursor: pointer;
-    background-color: var(--orange-hover);
+    background-color: var(--light-grey);
 }

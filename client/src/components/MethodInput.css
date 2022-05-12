@@ -1,21 +1,21 @@
-#TextArea {
+#MethodInput {
     display: flex;
     flex-direction: column;
 }
 
-#TextArea #instruction-container {
+#MethodInput #instruction-container {
     display: flex;
     flex-direction: column;
 }
 
-#TextArea #buttons-container {
+#MethodInput #buttons-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 1rem 0 4rem 0;
 }
 
-#TextArea #buttons-container button {
+#MethodInput #buttons-container button {
     margin-inline: 0;
 }
 

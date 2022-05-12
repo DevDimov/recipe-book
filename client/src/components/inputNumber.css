@@ -1,15 +1,15 @@
 input[type="number"] {
-    background-color: var(--light-grey);
-    border: none;
-    padding: 0.8rem;
-    font-family: "Work Sans", serif;
-    font-size: 1rem;
-    font-weight: 400;
     width: 100%;
+    border: none;
     outline: none;
-    box-sizing: border-box;
-    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+    font-weight: 400;
     resize: vertical;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    font-family: "Work Sans", serif;
+    background-color: var(--light-grey);
 }
 
 .inputNumber {
@@ -23,8 +23,9 @@ input[type="number"] {
     right: 3rem;
     opacity: 0.3;
     font-weight: 500;
-    pointer-events: none;
+    font-style: italic;
     position: absolute;
+    pointer-events: none;
     font-family: 'Work Sans';
 }
 

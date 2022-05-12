@@ -1,0 +1,21 @@
+.InputWord {}
+
+.InputWord span {
+    margin-right: 0.5rem;
+}
+
+.InputWord input {
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 10rem;
+    border-radius: 0;
+    font-weight: 500;
+    font-style: italic;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--orange);
+}
+
+.InputWord input:focus {
+    border-bottom: 2px solid var(--grey);
+}

@@ -1,24 +1,22 @@
 import { useState, useRef } from 'react'
 import './NewEntryForm.css'
-import InputText from './InputText'
-import TextArea from './TextArea'
+import TextArea from './MethodInput'
 import UploadRecipeImage from './UploadRecipeImage'
-
-import ButtonPrimary from './buttons/ButtonPrimary'
-import ButtonSecondary from './buttons/ButtonSecondary'
 
 import { upsertDocument } from '../js/utilities'
 import Alert from './Alert'
 import ArrowBackButton from './buttons/ArrowBackButton'
 import PrepTimeInput from './PrepTimeInput'
 import ServingsInput from './ServingsInput'
+import CategoryInput from './CategoryInput'
+import PrimaryButton from './buttons/PrimaryButton'
+import GhostButton from './buttons/GhostButton'
 
 const NewEntryForm = ({ toggleForm }) => {
 
     const [image, setImage] = useState(null)
     const [submitStatus, setSubmitStatus] = useState('')
 
-    const formRef = useRef()
     const nameRef = useRef('')
     const descriptionRef = useRef('')
     const categoryRef = useRef([])
@@ -117,12 +115,9 @@ const NewEntryForm = ({ toggleForm }) => {
 
             <ArrowBackButton handleOnClick={handleCancel} />
 
-            <form ref={formRef} id="newEntryForm" name="newEntryForm" onSubmit={handleSubmit}>
+            <form id="newEntryForm" name="newEntryForm">
 
-                <UploadRecipeImage
-                    image={image}
-                    setImage={setImage}
-                />
+                <UploadRecipeImage image={image} setImage={setImage} />
 
                 <label>
                     <h2>Name</h2>
@@ -149,47 +144,9 @@ const NewEntryForm = ({ toggleForm }) => {
                     />
                 </label>
 
-                <div>
-                    <h2>Category</h2>
-                    <InputText
-                        accessRef={categoryRef}
-                        suggestions={['Breakfast', 'Desert', 'High-Protein', 'Main meal', 'Snack', 'Vegetarian', 'Vegan']}
-                    />
-                </div>
-
-                <label>
-                    <h2>Preparation time</h2>
-                    <input
-                        ref={prepTimeRef}
-                        type="number"
-                        id="prep-time"
-                        name="prep-time"
-                        min="5"
-                        max="90"
-                        step="5"
-                        defaultValue="5"
-                        required
-                    />
-                </label>
-
-                <PrepTimeInput />
-
-                <label>
-                    <h2>Servings</h2>
-                    <input
-                        ref={servingsRef}
-                        type="number"
-                        id="servings"
-                        name="servings"
-                        min="1"
-                        max="8"
-                        step="1"
-                        defaultValue="2"
-                        required
-                    />
-                </label>
-
-                <ServingsInput />
+                <CategoryInput accessRef={categoryRef} />
+                <PrepTimeInput accessRef={prepTimeRef} />
+                <ServingsInput accessRef={servingsRef} />
 
                 <label>
                     <h2>Ingredients</h2>
@@ -204,26 +161,12 @@ const NewEntryForm = ({ toggleForm }) => {
                         required
                     />
                 </label>
+                    
+                <TextArea accessRef={methodRef} />
 
-                <div>
-                    <h2>Method</h2>
-                    <TextArea accessRef={methodRef} />
-                </div>
-
-                <ButtonPrimary
-                    type="submit"
-                    text="Save"
-                    handleOnClick={handleSubmit}
-                />
-                <ButtonSecondary
-                    type="button"
-                    text="Cancel"
-                    handleOnClick={handleCancel}
-                />
-
-                <Alert
-                    text={submitStatus}
-                />
+                <PrimaryButton text="Save" handleOnClick={handleSubmit} />
+                <GhostButton text="Cancel" handleOnClick={handleCancel} />
+                <Alert text={submitStatus} />
 
             </form>
         </div>

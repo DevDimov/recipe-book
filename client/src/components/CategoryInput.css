@@ -6,14 +6,14 @@
     width: 100%;
 }
 
-#categories-container {
+.categories-container {
     display: flex;
     flex-flow: row wrap;
     align-self: flex-start;
-    column-gap: 0.5rem;
+    grid-gap: 0.5rem;
 }
 
-#suggestions-container {
+.suggestions-container {
     position: relative;
     width: 100%;
 }

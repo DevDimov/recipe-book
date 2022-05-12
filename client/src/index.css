@@ -1,5 +1,5 @@
 @import url('./css/global.css');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
     --button-size: 42px;
@@ -15,11 +15,9 @@
 
 body {
   margin: 0;
-  font-family: 'Source Serif Pro', 'Work Sans', serif, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Source Serif Pro', 'Work Sans', serif, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 h2 {
@@ -28,16 +26,46 @@ h2 {
 }
 
 h3 {
-    font-family: "Work Sans";
     font-weight: 500;
     font-size: 0.9rem;
     margin: 1rem 0 0.5rem 0;
+    font-family: "Work Sans";
 }
 
-p {
-    font-family: "Work Sans";
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.3;
+p, span {
     margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-family: "Work Sans";
+}
+
+input {
+    width: 100%;
+    border: none;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    padding: 0.8rem;
+    font-weight: 400;
+    resize: vertical;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
 }

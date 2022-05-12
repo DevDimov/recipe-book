@@ -23,3 +23,7 @@
 .ButtonTextIcon img {
     width: 1.5rem;
 }
+
+.svgIcon {
+    display: flex;
+}
