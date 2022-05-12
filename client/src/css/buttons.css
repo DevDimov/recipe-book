@@ -1,0 +1,79 @@
+/* GhostButton */
+
+.GhostButton {
+    color: #000;
+    min-width: 8rem;
+    margin-inline: auto;
+    border-radius: 0.5rem;
+    background-color: transparent;
+}
+
+.GhostButton:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+}
+
+/* IconButton */
+
+.IconButton {
+    width: 3rem;
+    border: none;
+    height: 3rem;
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.IconButton:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--grey-hover);
+}
+
+/* OutlineButton */
+
+.OutlineButton {
+    display: flex;
+    column-gap: 0.2rem;
+    align-items: center;
+    margin-inline: auto;
+    white-space: nowrap;
+    padding: 0rem 0.8rem;
+    border-radius: 0.5rem;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid var(--light-grey);
+}
+
+.OutlineButton:hover {
+    cursor: pointer;
+    background-color: var(--light-grey);
+}
+
+.OutlineButton img {
+    width: 1.5rem;
+}
+
+.svgIcon {
+    display: flex;
+}
+
+/* PrimaryButton */
+
+.PrimaryButton {
+    color: #FFF;
+    min-width: 8rem;
+    margin-inline: auto;
+    border-radius: 0.5rem;
+    background-color: var(--orange);
+}
+
+.PrimaryButton:hover {
+    cursor: pointer;
+    background-color: var(--orange-hover);
+}

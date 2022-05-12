@@ -111,64 +111,66 @@ const NewEntryForm = ({ toggleForm }) => {
     }
 
     return (
-        <div className="container">
+        <div className="formCanvas">
+            <div className="formContainer">
 
-            <ArrowBackButton handleOnClick={handleCancel} />
+                <ArrowBackButton handleOnClick={handleCancel} />
 
-            <form id="newEntryForm" name="newEntryForm">
+                <form id="newEntryForm" name="newEntryForm">
 
-                <UploadRecipeImage image={image} setImage={setImage} />
+                    <UploadRecipeImage image={image} setImage={setImage} />
 
-                <label>
-                    <h2>Name</h2>
-                    <input
-                        ref={nameRef}
-                        type="text"
-                        name="name"
-                        defaultValue='Test'
-                        placeholder="Enter a unique name for your recipe"
-                        required
-                    />
-                </label>
+                    <label>
+                        <h2>Name</h2>
+                        <input
+                            ref={nameRef}
+                            type="text"
+                            name="name"
+                            defaultValue='Test'
+                            placeholder="Enter a unique name for your recipe"
+                            required
+                        />
+                    </label>
 
-                <label>
-                    <h2>Description</h2>
-                    <textarea
-                        ref={descriptionRef}
-                        name="description"
-                        rows="5"
-                        maxLength="500"
-                        defaultValue='Test description'
-                        placeholder="Describe your recipe in a few sentences"
-                        required
-                    />
-                </label>
+                    <label>
+                        <h2>Description</h2>
+                        <textarea
+                            ref={descriptionRef}
+                            name="description"
+                            rows="5"
+                            maxLength="500"
+                            defaultValue='Test description'
+                            placeholder="Describe your recipe in a few sentences"
+                            required
+                        />
+                    </label>
 
-                <CategoryInput accessRef={categoryRef} />
-                <PrepTimeInput accessRef={prepTimeRef} />
-                <ServingsInput accessRef={servingsRef} />
+                    <CategoryInput accessRef={categoryRef} />
+                    <PrepTimeInput accessRef={prepTimeRef} />
+                    <ServingsInput accessRef={servingsRef} />
 
-                <label>
-                    <h2>Ingredients</h2>
-                    <textarea
-                        ref={ingredientsRef}
-                        id="ingredients"
-                        name="ingredients"
-                        rows="10"
-                        maxLength="1000"
-                        resize="vertical"
-                        defaultValue='Test'
-                        required
-                    />
-                </label>
-                    
-                <TextArea accessRef={methodRef} />
+                    <label>
+                        <h2>Ingredients</h2>
+                        <textarea
+                            ref={ingredientsRef}
+                            id="ingredients"
+                            name="ingredients"
+                            rows="10"
+                            maxLength="1000"
+                            resize="vertical"
+                            defaultValue='Test'
+                            required
+                        />
+                    </label>
 
-                <PrimaryButton text="Save" handleOnClick={handleSubmit} />
-                <GhostButton text="Cancel" handleOnClick={handleCancel} />
-                <Alert text={submitStatus} />
+                    <TextArea accessRef={methodRef} />
 
-            </form>
+                    <PrimaryButton text="Save" handleOnClick={handleSubmit} />
+                    <GhostButton text="Cancel" handleOnClick={handleCancel} />
+                    <Alert text={submitStatus} />
+
+                </form>
+            </div>
         </div>
     )
 }

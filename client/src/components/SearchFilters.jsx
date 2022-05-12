@@ -5,9 +5,10 @@ import './SearchFilters.css'
 import LabelButtonsSelectable from './LabelButtonsSelectable'
 import InputWord from './InputWord'
 import PrimaryButton from './buttons/PrimaryButton'
+import GhostButton from './buttons/GhostButton'
 
 
-const SearchFilters = () => {
+const SearchFilters = ({ toggleSearchFilters }) => {
 
     const categoryRef = useRef([])
     const prepTimeRef = useRef(0)
@@ -37,9 +38,13 @@ const SearchFilters = () => {
                 labelName="Must contain"
                 accessRef={ingredientRef}
             />
-            <PrimaryButton 
+            <PrimaryButton
                 text="Search"
                 handleOnClick={onSearch}
+            />
+            <GhostButton
+                text="Close"
+                handleOnClick={toggleSearchFilters}
             />
         </form>
 

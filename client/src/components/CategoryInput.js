@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import './CategoryInput.css'
 
 import InputSuggestions from './InputSuggestions'
-import AddOutlineButton from './buttons/AddOutlineButton'
+import OutlineButton from './buttons/OutlineButton'
 import LabelButtonsEditable from './LabelButtonsEditable'
+import addIcon from '../icons/add.svg'
 
 
 const CategoryInput = ({ accessRef }) => {
@@ -85,7 +86,11 @@ const CategoryInput = ({ accessRef }) => {
                     onChange={onChange}
                     value={state.userInput}
                 />
-                <AddOutlineButton handleOnClick={onAdd} />
+                <OutlineButton
+                    text="Add"
+                    iconPath={addIcon}
+                    handleOnClick={onAdd}
+                />
             </div>
 
 

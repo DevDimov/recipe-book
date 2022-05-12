@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import './UploadRecipeImage.css'
-import ButtonTextIcon from './buttons/ButtonTextIcon'
+import OutlineButton from './buttons/OutlineButton'
 import uploadIcon from '../icons/file_upload.svg'
 import ImagePreview from './ImagePreview'
 
@@ -38,7 +38,7 @@ const UploadRecipeImage = ({ image, setImage}) => {
                     />
                     :
                     <div className="imageUpload">
-                        <ButtonTextIcon
+                        <OutlineButton
                             type="button"
                             text="Upload image"
                             iconPath={uploadIcon}

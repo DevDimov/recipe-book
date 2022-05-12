@@ -1,4 +1,4 @@
-import './buttonIconText.css'
+import './IconTextButton.css'
 import arrowBack from '../../icons/arrow_back.svg'
 
 const ArrowBackButton = ({ handleOnClick }) => {
@@ -7,7 +7,7 @@ const ArrowBackButton = ({ handleOnClick }) => {
         <button
             type="button"
             id="arrowBackButton"
-            className="buttonIconText"
+            className="IconTextButton"
             onClick={handleOnClick}
         >
             <img

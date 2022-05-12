@@ -107,6 +107,10 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
         }
     }
 
+    const toggleSearchFilters = () => {
+        setSearchFilters(!searchFilters)
+    }
+
     return (
         <div className="flex-center-column">
             <div className="SearchBar">
@@ -120,7 +124,7 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
                 // value={state.userInput}
                 />
                 <div className="inputButtons">
-                    <TuneButton handleOnClick={() => setSearchFilters(!searchFilters)} />
+                    <TuneButton handleOnClick={toggleSearchFilters} />
                     <SearchButton handleOnClick={search} />
                 </div>
 
@@ -137,7 +141,7 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
             </div>
             {
                 searchFilters &&
-                <SearchFilters />
+                <SearchFilters toggleSearchFilters={toggleSearchFilters} />
             }
             {/* {searchStatus && <StatusInfo
                 text={searchStatus}

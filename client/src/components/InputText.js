@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import './InputText.css'
 
 import addIcon from '../icons/add.svg'
-import ButtonTextIcon from './buttons/ButtonTextIcon'
+import OutlineButton from './buttons/OutlineButton'
 import InputSuggestions from './InputSuggestions'
 import CategoryLabel from './CategoryLabel'
 
@@ -87,7 +87,7 @@ const InputText = ({ accessRef, suggestions }) => {
                     onChange={onChange}
                     value={state.userInput}
                 />
-                <ButtonTextIcon
+                <OutlineButton
                     type="button"
                     text="Add"
                     iconPath={addIcon}

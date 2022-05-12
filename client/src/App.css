@@ -1,3 +1,10 @@
+.App-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-bottom: 10rem;
+}
+
 #header {
     height: 10vh;
     background-color: var(--orange);

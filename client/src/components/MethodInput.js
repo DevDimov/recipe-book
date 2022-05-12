@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import './MethodInput.css'
 import Instruction from './Instruction'
-import ButtonTextIcon from './buttons/ButtonTextIcon'
+import OutlineButton from './buttons/OutlineButton'
 import addIcon from '../icons/add.svg'
 import closeIcon from '../icons/close.svg'
-import AddOutlineButton from './buttons/AddOutlineButton'
 
 
 const MethodInput = ({ accessRef }) => {
@@ -50,11 +49,11 @@ const MethodInput = ({ accessRef }) => {
 
     return (
         <div id="MethodInput">
-            
+
             <label>
-                
+
                 <h2>Method</h2>
-                
+
                 <div id="instruction-container">
                     {method.length > 0 && method.map((data, index) => {
                         return (<Instruction
@@ -82,14 +81,20 @@ const MethodInput = ({ accessRef }) => {
             </label>
 
             <div id="buttons-container">
-                
-                <AddOutlineButton handleOnClick={addMethodStep} />
 
-                {method.length > 0 && <ButtonTextIcon
-                    text='Remove last'
-                    iconPath={closeIcon}
-                    handleOnClick={removeMethodStep}
-                />}
+                <OutlineButton
+                    text="Add"
+                    iconPath={addIcon}
+                    handleOnClick={addMethodStep}
+                />
+
+                {method.length > 0 &&
+                    <OutlineButton
+                        text='Remove last'
+                        iconPath={closeIcon}
+                        handleOnClick={removeMethodStep}
+                    />
+                }
 
             </div>
 

@@ -1,14 +1,11 @@
-import './ButtonTextIcon.css'
-
-const ButtonTextIcon = ({ type, text, iconPath, handleOnClick }) => {
+const IconButton = ({ type, iconPath, handleOnClick }) => {
 
     return (
         <button
             type={type}
-            className="ButtonTextIcon"
+            className="IconButton"
             onClick={handleOnClick}
         >
-            {text}
             <img
                 src={iconPath}
                 alt=""
@@ -17,4 +14,4 @@ const ButtonTextIcon = ({ type, text, iconPath, handleOnClick }) => {
     )
 }
 
-export default ButtonTextIcon
+export default IconButton

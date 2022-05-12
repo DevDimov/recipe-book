@@ -1,27 +1,33 @@
-.container {
-    width: min(100%, 600px);
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 1.5rem 5rem 1.5rem;
-    box-sizing: border-box;
-    row-gap: 1rem;
-    border: 2px solid var(--grey);
-    border-radius: 1.5rem;
-    margin: 5rem auto 10rem auto;
-    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
-    background-color: #FFF;
+.formCanvas {
+    width: 100vw;
+    padding: 13rem 0;
+    position: absolute;
 }
 
-.container > #arrowBackButton {
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    row-gap: 1rem;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    position: relative;
+    width: min(100%, 600px);
+    background-color: #FFF;
+    border: 2px solid var(--grey);
+    padding: 1.5rem 1.5rem 5rem 1.5rem;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
+}
+
+.formContainer>#arrowBackButton {
     position: absolute;
     top: -3rem;
     left: 0;
     background-color: transparent;
 }
 
-.container > #arrowBackButton:hover {
+.formContainer>#arrowBackButton:hover {
     cursor: pointer;
-    /* color: var(--orange); */
     opacity: 0.5;
     transition: all 0.3s ease;
 }
@@ -33,7 +39,6 @@
 }
 
 #newEntryForm input[type="text"],
-/* #newEntryForm input[type="number"],  */
 #newEntryForm textarea {
     background-color: var(--light-grey);
 }

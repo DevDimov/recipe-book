@@ -1,4 +1,4 @@
-import ButtonIcon from './buttons/ButtonIcon'
+import IconButton from './buttons/IconButton'
 import closeIcon from '../icons/close.svg'
 import './ImagePreview.css'
 
@@ -19,7 +19,7 @@ const ImagePreview = ({ src, onCloseImagePreview }) => {
                 className="recipeImagePreview"
                 style={style}
             />
-            <ButtonIcon 
+            <IconButton 
                 type="button"
                 iconPath={closeIcon}
                 handleOnClick={onCloseImagePreview}

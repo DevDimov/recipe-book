@@ -1,18 +1,23 @@
-.ButtonIcon {
+.IconTextButton {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
     border: none;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 999px;
     padding: 0.5rem;
-    box-sizing: border-box;
     transition: all 0.3s ease;
+    column-gap: 0.5rem;
 }
 
-.ButtonIcon:hover {
+.IconTextButton span {
+    font-family: 'Work Sans';
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 0.3rem;
+}
+
+.IconTextButton:hover {
     cursor: pointer;
     background-color: var(--grey-hover);
     transition: all 0.3s ease;

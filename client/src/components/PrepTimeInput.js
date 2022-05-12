@@ -23,7 +23,7 @@ const PrepTimeInput = ({ accessRef }) => {
                     step="5"
                     defaultValue="5"
                 />
-                <span>minutes</span>
+                <span>minutes or less</span>
             </div>
         </label>
     )

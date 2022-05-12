@@ -7,8 +7,10 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <SearchBar />
-            <AddNewRecipe />
+            <div className="App-container">
+                <SearchBar />
+                <AddNewRecipe />
+            </div>
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import './PrimaryButton.css'
-
 const PrimaryButton = ({ text, handleOnClick }) => {
 
     return (

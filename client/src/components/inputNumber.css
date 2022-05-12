@@ -1,14 +1,5 @@
 input[type="number"] {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    padding: 0.8rem;
-    font-weight: 400;
-    resize: vertical;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    font-family: "Work Sans", serif;
+    width: 5rem;
     background-color: var(--light-grey);
 }
 
@@ -16,17 +7,10 @@ input[type="number"] {
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: center;
 }
 
 .inputNumber span {
-    right: 3rem;
-    opacity: 0.3;
-    font-weight: 500;
-    font-style: italic;
-    position: absolute;
-    pointer-events: none;
-    font-family: 'Work Sans';
+    margin-left: 0.5rem;
 }
 
 input[type="number"]:focus {

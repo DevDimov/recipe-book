@@ -1,4 +1,3 @@
-import './ButtonIcon.css'
 import './SearchButton.css'
 import searchIcon from '../../icons/search.svg'
 
@@ -8,7 +7,7 @@ const SearchButton = ({ handleOnClick }) => {
         <button
             type="button"
             id="searchButton"
-            className="ButtonIcon"
+            className="IconButton"
             onClick={handleOnClick}
         >
             <img

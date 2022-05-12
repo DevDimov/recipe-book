@@ -1,5 +1,3 @@
-import './GhostButton.css'
-
 const GhostButton = ({ text, handleOnClick }) => {
 
     return (

@@ -24,7 +24,7 @@ const ServingsInput = ({ accessRef }) => {
                     defaultValue="2"
                     required
                 />
-                <span>people</span>
+                <span>people or more</span>
             </div>
         </label>
     )

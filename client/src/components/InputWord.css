@@ -1,4 +1,6 @@
-.InputWord {}
+.InputWord {
+    margin-bottom: 4rem;
+}
 
 .InputWord span {
     margin-right: 0.5rem;
