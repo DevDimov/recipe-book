@@ -25,7 +25,7 @@ const NewEntryForm = ({ toggleForm }) => {
     const ingredientsRef = useRef('')
     const methodRef = useRef([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const recipeData = {
@@ -33,18 +33,18 @@ const NewEntryForm = ({ toggleForm }) => {
             name: nameRef.current.value.trim(),
             description: descriptionRef.current.value.trim(),
             category: categoryRef.current,
-            prepTime: prepTimeRef.current.value,
-            servings: servingsRef.current.value,
+            prepTime: parseInt(prepTimeRef.current.value),
+            servings: parseInt(servingsRef.current.value),
             ingredients: ingredientsRef.current.value.trim(),
             method: methodRef.current
         }
         console.log('You clicked Submit.', recipeData);
 
-        if (validateInput(recipeData)) {
-            // const response = await upsertDocument(recipeData)
-            // handleSubmitResponse(response)
-            handleSubmitResponse({ upsertedCount: 1 })
-        }
+        // if (validateInput(recipeData)) {
+        //     const response = await upsertDocument(recipeData)
+        //     handleSubmitResponse(response)
+        //     // handleSubmitResponse({ upsertedCount: 1 })
+        // }
     }
 
     const validateInput = (input) => {

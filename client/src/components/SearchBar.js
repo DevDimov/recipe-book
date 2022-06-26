@@ -3,12 +3,13 @@ import './SearchBar.css'
 import TuneButton from './buttons/TuneButton'
 import SearchButton from './buttons/SearchButton'
 import SearchFilters from './SearchFilters'
+import { searchByName } from '../js/utilities'
 // import searchIcon from "../images/search-icon.svg"
 // import StatusInfo from "./StatusInfo";
 // import infoIcon from "../images/info-icon.svg"
 // import { SearchSuggestions } from "./SearchSuggestions";
 
-const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, searchError, setData }) => {
+const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, searchError, setRecipes }) => {
 
     const [state, setState] = useState({
         userInput: '',
@@ -22,19 +23,20 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
 
     const inputRef = useRef()
 
-    useEffect(() => {
-        setSearchStatus('')
-        setState({ ...state, userInput: '' })
-    }, [locations])
+    // useEffect(() => {
+    //     setSearchStatus('')
+    //     setState({ ...state, userInput: '' })
+    // }, [locations])
 
-    useEffect(() => {
-        setSearchStatus(searchError)
-    }, [searchError])
+    // useEffect(() => {
+    //     setSearchStatus(searchError)
+    // }, [searchError])
 
     const onChange = (e) => {
         const userInput = e.currentTarget.value;
-        let re = new RegExp(userInput, 'i');
-        let matches = suggestions.filter((city) => (city.search(re) > -1))
+        // let re = new RegExp(userInput, 'i');
+        // let matches = suggestions.filter((city) => (city.search(re) > -1))
+        let matches = 'N/A'
         setState({
             userInput: userInput,
             filteredSuggestions: matches,
@@ -79,31 +81,31 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
     }
 
     const search = async () => {
-        const userInput = state.userInput.trim()
-        if (userInput.length < 3) {
-            setSearchStatus(lang.search.invalidInput)
-        }
-        else {
-            const re = new RegExp(userInput, 'i')
-            let matches = locations.filter((city) => (city.name.search(re) > -1))
-            if (matches.length) {
-                setSearchStatus(lang.search.duplicate)
+        const userInput = inputRef.current.value.trim()
+        console.log(userInput)
+        if (userInput.length > 2) {
+            // setSearchStatus(`Searching for recipes related to ${state.userInput}`)
+            const data = await searchByName({ name: userInput })
+            if (data) {
+                setRecipes(data)
             }
             else {
-                if (locations.length >= 3) {
-                    setSearchStatus(lang.search.limit)
-                }
-                else {
-                    setSearchStatus(`${lang.search.load} ${state.userInput}`)
-                    const data = await getWeather('cityName', userInput, langValue)
-                    if (data.hourData) {
-                        setData(data)
-                    }
-                    else {
-                        setSearchStatus(`${data.statusText}, ${data.status}`)
-                    }
-                }
+                // setSearchStatus(`${data.statusText}, ${data.status}`)
+                setRecipes({ error: 'error', searchInput: userInput })
             }
+        }
+    }
+
+    const prepareQuery = () => {
+        const recipeData = {
+            // image: image ? image.name : '',
+            // name: nameRef.current.value.trim(),
+            // description: descriptionRef.current.value.trim(),
+            // category: categoryRef.current,
+            // prepTime: prepTimeRef.current.value,
+            // servings: servingsRef.current.value,
+            // ingredients: ingredientsRef.current.value.trim(),
+            // method: methodRef.current
         }
     }
 

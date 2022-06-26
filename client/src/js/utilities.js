@@ -1,4 +1,4 @@
-const insertDocument = (data) => {
+const insertDocument = async (data) => {
     fetch('/insert', {
         method: 'POST',
         headers: {
@@ -34,4 +34,47 @@ const upsertDocument = async (data) => {
         })
 }
 
-module.exports = { insertDocument, upsertDocument }
+const searchByName = async (query) => {
+    fetch('/searchByName', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(query),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            return data
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            return error
+        })
+}
+
+const searchWithFilters = async (query) => {
+    fetch('/searchWithFilters', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(query),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            return data
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            return error
+        })
+}
+
+export {
+    insertDocument,
+    upsertDocument,
+    searchByName,
+    searchWithFilters,
+}

@@ -21,17 +21,8 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from server!" })
 })
 
-
-
-app.post('/insert', async (req, res) => {
-    try {
-        // console.log((req.body))
-        const response = await mongodb.insertDocument(client, req.body)
-        return res.status(200).json(response)
-    } catch (err) {
-        // console.log(err.message)
-        return res.status(500).json(err)
-    }
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 })
 
 app.post('/upsert', async (req, res) => {
@@ -43,36 +34,25 @@ app.post('/upsert', async (req, res) => {
     }
 })
 
-// app.get('/api', async (req, res) => {
-//     try {
-//         const cityID = req.query.id
-//         const cityName = req.query.q
-//         const lang = req.query.lang
-//         const apiKey = process.env.API_KEY
-//         const url = 'http://api.openweathermap.org/data/2.5/forecast'
+app.post('/searchByName', async (req, res) => {
+    try {
+        // console.log(req.body)
+        const response = await mongodb.searchByName(client, req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json(err.message)
+    }
+})
 
-//         let query = ''
-//         if (cityID) query = `id=${cityID}`
-//         if (cityName) query = `q=${cityName}`
-
-//         // const url = 'http://api.openweathermap.org/errorURLforDevEnv'
-//         const response = await fetch(`${url}?${query}&lang=${lang}&units=metric&appid=${apiKey}`)
-//         const data = await response.json()
-//         // console.log(data)
-//         return res.status(200).json(data)
-//     } catch (err) {
-//         // console.log(err.message)
-//         return res.status(500).json(err.message)
-//     }
-// })
-
-// app.get('/', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
-// })
-
-// app.get('/about', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../client/build/html', 'about.html'))
-// })
+app.post('/searchWithFilters', async (req, res) => {
+    try {
+        // console.log(req.body)
+        const response = await mongodb.searchWithFilters(client, req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json(err.message)
+    }
+})
 
 // app.use(function (req, res) {
 //     res.status(404).sendFile(path.resolve(__dirname, '../client/build/html', '404.html'))

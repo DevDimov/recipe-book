@@ -28,7 +28,8 @@ const MethodInput = ({ accessRef }) => {
         setValue(e.target.value)
     }
 
-    const addMethodStep = () => {
+    const addMethodStep = (e) => {
+        e.preventDefault()
         let input = ''
         if (value) {
             input = value.trim()
