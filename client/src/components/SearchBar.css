@@ -1,12 +1,18 @@
-.SearchBar {
+.search {
+    position: relative;
+    margin: 4rem 0 6rem 0;
     display: flex;
-    margin: 4rem auto 1.5rem auto;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
     position: relative;
     align-items: center;
     width: min(80vw, 500px);
 }
 
-.SearchBar input {
+.search-bar__input {
     width: 100%;
     height: 4rem;
     outline: none;
@@ -19,11 +25,11 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-.SearchBar input:focus {
+.search-bar__input:focus {
     border: 2px solid var(--orange);
 }
 
-.SearchBar .inputButtons {
+.search-buttons {
     right: 0;
     display: flex;
     column-gap: 0.2rem;

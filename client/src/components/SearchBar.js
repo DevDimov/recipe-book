@@ -4,18 +4,11 @@ import TuneButton from './buttons/TuneButton'
 import SearchButton from './buttons/SearchButton'
 import SearchFilters from './SearchFilters'
 import { searchByName } from '../js/utilities'
-// import searchIcon from "../images/search-icon.svg"
-// import StatusInfo from "./StatusInfo";
-// import infoIcon from "../images/info-icon.svg"
-// import { SearchSuggestions } from "./SearchSuggestions";
 
-const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, searchError, setRecipes }) => {
+const SearchBar = ({ setRecipes }) => {
 
     const [state, setState] = useState({
-        userInput: '',
-        filteredSuggestions: [],
-        activeSuggestion: 0,
-        showSuggestions: false
+        userInput: ''
     })
     const [searchStatus, setSearchStatus] = useState('')
 
@@ -109,46 +102,27 @@ const SearchBar = ({ lang, langValue, getWeather, locations, suggestions, search
         }
     }
 
-    const toggleSearchFilters = () => {
-        setSearchFilters(!searchFilters)
-    }
+    const toggleSearchFilters = () => { setSearchFilters(!searchFilters) }
 
     return (
-        <div className="flex-center-column">
-            <div className="SearchBar">
+        <div className="search">
+            <div className="search-bar">
                 <input
+                    className="search-bar__input"
                     ref={inputRef}
                     type="text"
                     placeholder="Search recipes"
                     maxLength="100"
-                // onChange={onChange}
-                // onKeyDown={onKeyDown}
-                // value={state.userInput}
                 />
-                <div className="inputButtons">
+                <div className="search-buttons">
                     <TuneButton handleOnClick={toggleSearchFilters} />
                     <SearchButton handleOnClick={search} />
                 </div>
-
-
-                {/* {
-                    state.showSuggestions && state.userInput && state.filteredSuggestions &&
-                    <SearchSuggestions
-                        filteredSuggestions={state.filteredSuggestions}
-                        activeSuggestion={state.activeSuggestion}
-                        setState={setState}
-                        inputRef={inputRef}
-                    />
-                } */}
             </div>
-            {
-                searchFilters &&
-                <SearchFilters toggleSearchFilters={toggleSearchFilters} />
-            }
-            {/* {searchStatus && <StatusInfo
-                text={searchStatus}
-                icon={infoIcon}
-            />} */}
+            <SearchFilters
+                show={searchFilters}
+                toggleSearchFilters={toggleSearchFilters}
+            />
         </div>
     )
 }

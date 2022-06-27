@@ -12,7 +12,7 @@ import CategoryInput from './CategoryInput'
 import PrimaryButton from './buttons/PrimaryButton'
 import GhostButton from './buttons/GhostButton'
 
-const NewEntryForm = ({ toggleForm }) => {
+const NewEntryForm = ({ show, toggleForm }) => {
 
     const [image, setImage] = useState(null)
     const [submitStatus, setSubmitStatus] = useState('')
@@ -111,7 +111,7 @@ const NewEntryForm = ({ toggleForm }) => {
     }
 
     return (
-        <div className="formCanvas">
+        <div className={show ? "overlay-new-recipe is-active" : "overlay-new-recipe"}>
             <div className="formContainer">
 
                 <ArrowBackButton handleOnClick={handleCancel} />

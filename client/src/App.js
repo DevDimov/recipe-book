@@ -22,16 +22,21 @@ function App() {
     // }
 
     return (
-        <div className="App">
+        <>
             <Header />
-            <div className="App-container">
+            <div className="app">
                 <SearchBar
                     setRecipes={setRecipes}
                 />
                 <Recipes data={recipes} />
                 <AddNewRecipe />
+                {/* <div className="App-container">
+
+                
+                
+            </div> */}
             </div>
-        </div>
+        </>
     );
 }
 

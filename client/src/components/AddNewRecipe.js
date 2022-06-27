@@ -15,6 +15,7 @@ const AddNewRecipe = () => {
             {
                 showForm ?
                     <NewEntryForm
+                        show={showForm}
                         toggleForm={toggleForm}
                     />
                     :

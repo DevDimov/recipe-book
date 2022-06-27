@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import PrepTimeInput from './PrepTimeInput'
 import ServingsInput from './ServingsInput'
 import './SearchFilters.css'
@@ -7,8 +7,7 @@ import InputWord from './InputWord'
 import PrimaryButton from './buttons/PrimaryButton'
 import GhostButton from './buttons/GhostButton'
 
-
-const SearchFilters = ({ toggleSearchFilters }) => {
+const SearchFilters = ({ show, toggleSearchFilters }) => {
 
     const categoryRef = useRef([])
     const prepTimeRef = useRef(0)
@@ -26,28 +25,29 @@ const SearchFilters = ({ toggleSearchFilters }) => {
     }
 
     return (
-        <form id="SearchFilters" name="searchFilters">
-            <LabelButtonsSelectable
-                headerName="Category"
-                accessRef={categoryRef}
-            />
-            <PrepTimeInput accessRef={prepTimeRef} />
-            <ServingsInput accessRef={servingsRef} />
-            <InputWord
-                headerName="Ingredient"
-                labelName="Must contain"
-                accessRef={ingredientRef}
-            />
-            <PrimaryButton
-                text="Search"
-                handleOnClick={onSearch}
-            />
-            <GhostButton
-                text="Close"
-                handleOnClick={toggleSearchFilters}
-            />
-        </form>
-
+        <div className={show ? "overlay is-active" : "overlay"}>
+            <form id="search-filters" name="search-filters">
+                <LabelButtonsSelectable
+                    headerName="Category"
+                    accessRef={categoryRef}
+                />
+                <PrepTimeInput accessRef={prepTimeRef} />
+                <ServingsInput accessRef={servingsRef} />
+                <InputWord
+                    headerName="Ingredient"
+                    labelName="Must contain"
+                    accessRef={ingredientRef}
+                />
+                <PrimaryButton
+                    text="Search"
+                    handleOnClick={onSearch}
+                />
+                <GhostButton
+                    text="Close"
+                    handleOnClick={toggleSearchFilters}
+                />
+            </form>
+        </div>
     )
 }
 
