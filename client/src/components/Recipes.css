@@ -1,0 +1,7 @@
+.recipes {
+    display: flex;
+    gap: min(3rem, 5vw);
+    padding: 0 min(3rem, 5vw);
+    margin-top: 6rem;
+    flex-wrap: wrap;
+}

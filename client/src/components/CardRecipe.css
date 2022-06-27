@@ -1,0 +1,48 @@
+.card-recipe {
+    max-width: 340px;
+    max-height: 560px;
+    background-color: var(--light-grey);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+}
+
+.card-recipe__image {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.card-recipe__name {
+    margin: 1rem 0 0.8rem 0;
+    padding: 0 1.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.card-recipe__description {
+    padding: 0 1.3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.card-recipe__tags {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.3rem 1.3rem 1.3rem;
+    align-self: end;
+}
+
+.card-recipe__tags h3 {
+    margin: 0;
+    padding: 0;
+}

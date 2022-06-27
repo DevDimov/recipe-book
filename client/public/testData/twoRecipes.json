@@ -1,0 +1,37 @@
+[
+    {
+        "_id": "6278e3df56d91cf2530eead5",
+        "name": "Martha’s One Pan Pasta",
+        "category": [
+            "Pasta",
+            "Main meal"
+        ],
+        "description": "This one-pot-wonder sees both pasta and sauce cooked together resulting in perfectly al dente spaghetti and 50% less washing up!",
+        "image": "one-pan-pasta.jpg",
+        "ingredients": "200g spaghetti\n200g cherry tomatoes, sliced in half\n100g baby spinach leaves\n1 small onion, finely sliced\n3 cloves garlic, finely sliced\n1 red chilli, finely chopped\nA small handful of basil leaves, roughly chopped\n2 tbsp extra virgin olive oil\n50g pecorino cheese, grated\nSea salt and ground black pepper",
+        "method": [
+            "Arrange the tomatoes, spinach, onion, garlic, and chilli across the base of a large frying pan. Nestle the spaghetti in the centre of the pan and pour over the olive oil and 600ml of water or chicken stock.",
+            "Place the pan over a medium high heat and bring the contents of the pan to the boil. Using a tongs, stir the pasta regularly and cook for about 9 minutes until it’s cooked and the liquid has nearly evaporated creating a sauce."
+        ],
+        "prepTime": 15,
+        "servings": 2
+    },
+    {
+        "_id": "62b6c59732d5ff72c87bada6",
+        "name": "Easy Chicken Biryani",
+        "category": [
+            "Main meal"
+        ],
+        "description": "Donal Skehan's quick version of this Indian classic results in perfectly cooked rice and moist chicken – just as it should be. As if that wasn’t enough, you only need to use one pan so there’s minimal washing up!",
+        "image": "easy-chicken-biryani.jpg",
+        "ingredients": "150g basmati rice, rinsed\n600g boneless chicken thighs, cut into bite size pieces\n2 tbsp sunflower oil\n1 large onion, thinly sliced\n2 inch piece of ginger peeled and finely chopped\n1 tsp turmeric\n½ tsp ground cardamom\n1 stick cinnamon\n1 bay leaf\n25g golden raisins\n600ml chicken stock\n25g unskinned whole almonds, toasted and roughly chopped\n2 tbsp chopped coriander.",
+        "method": [
+            "In a heavy based casserole pot heat the oil. Brown the chicken in the oil till the edges are golden. Remove to a plate.",
+            "Lower the heat and add the onion and ginger, cook gently till soft but not coloured, add the spices and cook for another 3-4 minutes or until the spices become fragrant.",
+            "Add the rice and the chicken and stir to coat both in the spices. Add the raisins and bay leaf. Pour in the stock and bring to the boil. Cover the pan and simmer for 18 minutes or until rice is cooked and the chicken is tender.",
+            "Take off the heat and let stand for 5 minutes. Remove the bay leaf and the cinnamon stick. Taste and adjust seasoning. Serve garnished with almonds and coriander."
+        ],
+        "prepTime": 45,
+        "servings": 4
+    }
+]
