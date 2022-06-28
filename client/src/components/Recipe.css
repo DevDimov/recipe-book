@@ -1,0 +1,7 @@
+.recipe {
+	display: flex;
+	row-gap: 1rem;
+	box-sizing: border-box;
+	flex-direction: column;
+	background-color: #FFF;
+}

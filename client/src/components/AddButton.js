@@ -1,7 +1,10 @@
-const AddButton = ({ toggleForm }) => {
+const AddButton = ({ showForm, toggleForm }) => {
 
     return (
-        <button id="add-button" className="" onClick={toggleForm}>
+        <button
+            id="add-button" 
+            // className={showForm ? "transparent" : ""}
+            onClick={toggleForm}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="48px"

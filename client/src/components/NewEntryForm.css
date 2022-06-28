@@ -1,17 +1,3 @@
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    row-gap: 1rem;
-    margin: 0 auto;
-    border-radius: 1.5rem;
-    position: relative;
-    width: min(100%, 600px);
-    background-color: #FFF;
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
-    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
-}
-
 .formContainer>#arrowBackButton {
     position: absolute;
     top: -3rem;

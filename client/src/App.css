@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    opacity: 1;
 }
 
 #add-button:hover {
@@ -43,6 +44,10 @@
 #add-button svg {
     width: 2.5rem;
     height: auto;
+}
+
+.transparent {
+    opacity: 0;
 }
 
 button img {

@@ -6,24 +6,11 @@ const AddNewRecipe = () => {
 
     const [showForm, setShowForm] = useState(false)
 
-    const toggleForm = () => {
-        setShowForm(!showForm)
-    }
+    const toggleForm = () => { setShowForm(!showForm) }
 
     return (
         <>
-            {
-                showForm ?
-                    <NewEntryForm
-                        show={showForm}
-                        toggleForm={toggleForm}
-                    />
-                    :
-                    <AddButton
-                        toggleForm={toggleForm}
-                    />
-
-            }
+            {showForm ? <NewEntryForm toggleForm={toggleForm} /> : <AddButton toggleForm={toggleForm} />}
         </>
     )
 }

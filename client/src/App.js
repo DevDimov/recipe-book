@@ -30,11 +30,6 @@ function App() {
                 />
                 <Recipes data={recipes} />
                 <AddNewRecipe />
-                {/* <div className="App-container">
-
-                
-                
-            </div> */}
             </div>
         </>
     );

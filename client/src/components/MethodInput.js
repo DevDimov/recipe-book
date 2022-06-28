@@ -72,7 +72,7 @@ const MethodInput = ({ accessRef }) => {
                         maxLength="500"
                         onChange={handleOnChange}
                         value={value}
-                        required={method.length === 0 ? true : false}
+                        // required={method.length === 0 ? true : false}
                     />
 
                     {showPlaceholder && <div><h2>{method.length + 1 + '.'}</h2></div>}

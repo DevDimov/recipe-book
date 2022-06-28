@@ -1,11 +1,27 @@
 .card-recipe {
     max-width: 340px;
     max-height: 560px;
-    background-color: var(--light-grey);
     border-radius: 1.5rem;
     overflow: hidden;
     display: grid;
     grid-template-rows: repeat(4, min-content);
+    background-color: white;
+    filter: drop-shadow(0 0.2rem 0.5rem rgba(0, 0, 0, 0.1));
+}
+
+.card-recipe__button {
+    padding: 0;
+    outline: transparent;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 1.5rem;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-recipe__button:hover {
+    background-color: var(--light-grey);
+    transition: all 0.3s ease-in-out;
 }
 
 .card-recipe__image {

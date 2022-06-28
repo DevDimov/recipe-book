@@ -7,7 +7,7 @@ import InputWord from './InputWord'
 import PrimaryButton from './buttons/PrimaryButton'
 import GhostButton from './buttons/GhostButton'
 
-const SearchFilters = ({ show, toggleSearchFilters }) => {
+const SearchFilters = ({ toggleSearchFilters }) => {
 
     const categoryRef = useRef([])
     const prepTimeRef = useRef(0)
@@ -25,8 +25,12 @@ const SearchFilters = ({ show, toggleSearchFilters }) => {
     }
 
     return (
-        <div className={show ? "overlay is-active" : "overlay"}>
-            <form id="search-filters" name="search-filters">
+        <div className="centered">
+            <form 
+                id="search-filters"
+                className="popup-container"
+                name="search-filters"
+                >
                 <LabelButtonsSelectable
                     headerName="Category"
                     accessRef={categoryRef}

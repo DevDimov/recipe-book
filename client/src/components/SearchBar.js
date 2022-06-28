@@ -119,10 +119,7 @@ const SearchBar = ({ setRecipes }) => {
                     <SearchButton handleOnClick={search} />
                 </div>
             </div>
-            <SearchFilters
-                show={searchFilters}
-                toggleSearchFilters={toggleSearchFilters}
-            />
+            {searchFilters ? <SearchFilters toggleSearchFilters={toggleSearchFilters} /> : null}
         </div>
     )
 }
