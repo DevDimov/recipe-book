@@ -1,5 +1,5 @@
 import './Recipes.css'
-import CardRecipe from './CardRecipe'
+import RecipeCard from './RecipeCard'
 
 const Recipes = ({ data }) => {
 
@@ -8,7 +8,7 @@ const Recipes = ({ data }) => {
             {
                 data.map((item) => {
                     return (
-                        <CardRecipe
+                        <RecipeCard
                             key={item._id}
                             data={item}
                         />

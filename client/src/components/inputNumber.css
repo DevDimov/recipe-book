@@ -3,13 +3,13 @@ input[type="number"] {
     background-color: var(--light-grey);
 }
 
-.inputNumber {
+.input-number {
     display: flex;
     position: relative;
     align-items: center;
 }
 
-.inputNumber span {
+.input-number span {
     margin-left: 0.5rem;
 }
 

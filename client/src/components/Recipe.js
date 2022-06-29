@@ -1,5 +1,9 @@
 import './Recipe.css'
 import OutlineButton from './buttons/OutlineButton'
+import ImagePreview from './ImagePreview'
+import arrowBack from '../icons/arrow_back.svg'
+import Tag from './Tag'
+import GhostButton from './buttons/GhostButton'
 
 const Recipe = ({ handleOnClose, data }) => {
 
@@ -7,28 +11,56 @@ const Recipe = ({ handleOnClose, data }) => {
         <div className="centered">
             <div className="popup-container">
                 <div className="recipe">
-                    <img
-                        className="card-recipe__image"
-                        src={`./images/${data.image}`}
-                        alt=""
-                    />
-                    <h1 className="card-recipe__name">{data.name}</h1>
-                    <h2 className="">Ingredients</h2>
-                    <p className="card-recipe__name">{data.ingredients}</p>
-                    <h2 className="">Method</h2>
-                    <p className="">{data.method[0]}</p>
-                    {/* <p className="card-recipe__description">{data.description}</p>
-            <div className="card-recipe__tags">
-                <h3>{data.category[0].toUpperCase()}</h3>
-                <h3>{`${data.prepTime} MINS`}</h3>
-                <h3>{`SERVES ${data.servings}`}</h3>
-            </div> */}
-                    {/* <OutlineButton
+
+                    <GhostButton 
+                        customId="button-arrow-back"
                         text="Back"
-                        // iconPath={addIcon}
                         handleOnClick={handleOnClose}
-                    /> */}
-                    <button onClick={handleOnClose}>Back</button>
+                        imagePath={arrowBack}
+                    />
+
+                    <ImagePreview src={`./images/${data.image}`} />
+
+                    <div>
+                        <h1>{data.name}</h1>
+                        <div className="tag-container">
+                            {
+                                data.category.map((name) => {
+                                    return (
+                                        <Tag text={name} key={name} />
+                                    )
+                                })
+                            }
+                            <Tag text={`${data.prepTime} mins`} key={`${data.prepTime} mins`} />
+                            <Tag text={`Serves ${data.servings}`} key={`Serves ${data.servings}`} />
+                        </div>
+                        <p className="recipe__section-body">{data.description}</p>
+                    </div>
+
+                    <div>
+                        <h2 className="recipe__section-header">Ingredients</h2>
+                        <p className="recipe__section-ingredients">{data.ingredients}</p>
+                    </div>
+
+                    <div>
+                        <h2 className="recipe__section-header">Method</h2>
+                        {
+                            data.method.map((step, index) => {
+                                return (
+                                    <div key={index + 1}>
+                                        <h3>{`${index + 1}.`}</h3>
+                                        <p className="recipe__section-body">{step}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    
+                    <OutlineButton
+                        text="Close"
+                        handleOnClick={handleOnClose}
+                    />
+
                 </div>
             </div>
         </div>

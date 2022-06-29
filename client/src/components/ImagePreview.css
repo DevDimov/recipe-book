@@ -1,4 +1,4 @@
-.squareContainer {
+.container--square {
     position: relative;
     width: min(100%, 600px);
     border-radius: 1rem;
@@ -6,13 +6,13 @@
     overflow: hidden;
 }
 
-.squareContainer:after {
+.container--square:after {
     content: "";
     display: block;
     padding-bottom: 100%;
 }
 
-.squareContainer .IconButton {
+.container--square .IconButton {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;

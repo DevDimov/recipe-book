@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import './App.css';
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
-import AddNewRecipe from './components/AddNewRecipe'
+import RecipeSubmit from './components/RecipeSubmit'
 import Recipes from './components/Recipes';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
                     setRecipes={setRecipes}
                 />
                 <Recipes data={recipes} />
-                <AddNewRecipe />
+                <RecipeSubmit />
             </div>
         </>
     );

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
-import './inputNumber.css'
+import './InputNumber.css'
 
-const ServingsInput = ({ accessRef }) => {
+const InputServings = ({ accessRef }) => {
 
     const inputRef = useRef()
 
@@ -12,7 +12,7 @@ const ServingsInput = ({ accessRef }) => {
     return (
         <label>
             <h2>Servings</h2>
-            <div className="inputNumber">
+            <div className="input-number">
                 <input
                     ref={inputRef}
                     type="number"
@@ -30,4 +30,4 @@ const ServingsInput = ({ accessRef }) => {
     )
 }
 
-export default ServingsInput
+export default InputServings

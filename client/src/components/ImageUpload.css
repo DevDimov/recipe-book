@@ -1,11 +1,11 @@
-.UploadRecipeImage {
+.image-upload {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     row-gap: 0.5rem;
 }
 
-.imageUpload {
+.button--image-upload {
     position: relative;
     display: flex;
     align-items: center;

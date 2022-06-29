@@ -1,19 +1,20 @@
-/* GhostButton */
-
-.GhostButton {
-    color: #000;
-    min-width: 8rem;
-    margin-inline: auto;
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.2rem;
+    padding: 0rem 0.8rem;
     border-radius: 0.5rem;
+}
+
+.button--ghost {
+    color: #000;
     background-color: transparent;
 }
 
-.GhostButton:hover {
-    cursor: pointer;
+.button--ghost:hover {
     background-color: var(--light-grey);
 }
-
-/* IconButton */
 
 .IconButton {
     width: 3rem;
@@ -76,4 +77,32 @@
 .PrimaryButton:hover {
     cursor: pointer;
     background-color: var(--orange-hover);
+}
+
+#add-button {
+    border: none;
+    background-color: var(--orange);
+    border-radius: 999px;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+#add-button:hover {
+    cursor: pointer;
+    background-color: var(--orange-hover);
+    transition: all 0.3s ease;
+}
+
+#add-button img {
+    width: 2.5rem;
+    height: auto;
 }

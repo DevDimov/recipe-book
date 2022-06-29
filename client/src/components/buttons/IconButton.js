@@ -1,8 +1,9 @@
-const IconButton = ({ type, iconPath, handleOnClick }) => {
+const IconButton = ({ customId, iconPath, handleOnClick }) => {
 
     return (
         <button
-            type={type}
+            type="button"
+            id={customId}
             className="IconButton"
             onClick={handleOnClick}
         >

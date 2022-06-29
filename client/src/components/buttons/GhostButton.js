@@ -1,11 +1,26 @@
-const GhostButton = ({ text, handleOnClick }) => {
+const GhostButton = ({ customId, text, handleOnClick, imagePath }) => {
+
+    // return (
+    //     <button
+    //         type="button"
+    //         className="GhostButton"
+    //         onClick={handleOnClick}
+    //     >
+    //         {text}
+    //     </button>
+    // )
 
     return (
         <button
             type="button"
-            className="GhostButton"
+            id={customId}
+            className="button button--ghost"
             onClick={handleOnClick}
         >
+            {imagePath && <img
+                src={imagePath}
+                alt=""
+            />}
             {text}
         </button>
     )

@@ -1,7 +1,35 @@
 .recipe {
-	display: flex;
-	row-gap: 1rem;
-	box-sizing: border-box;
-	flex-direction: column;
-	background-color: #FFF;
+    display: flex;
+    row-gap: 1rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color: #FFF;
+}
+
+.recipe .button {
+    align-self: flex-start;
+}
+
+.recipe__section-header {
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--orange)
+}
+
+.recipe__section-ingredients {
+    white-space: pre-wrap;
+    line-height: 2;
+}
+
+.recipe .OutlineButton {
+    margin: 2rem auto;
+}
+
+#button-arrow-back {
+    column-gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0 1rem 0 0.6rem;
+}
+
+.tag-container {
+    margin: 0 0 1rem 0;
 }

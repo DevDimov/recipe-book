@@ -1,6 +1,6 @@
 import { useRef } from 'react'
-import PrepTimeInput from './PrepTimeInput'
-import ServingsInput from './ServingsInput'
+import InputPrepTime from './InputPrepTime'
+import InputServings from './InputServings'
 import './SearchFilters.css'
 import LabelButtonsSelectable from './LabelButtonsSelectable'
 import InputWord from './InputWord'
@@ -35,8 +35,8 @@ const SearchFilters = ({ toggleSearchFilters }) => {
                     headerName="Category"
                     accessRef={categoryRef}
                 />
-                <PrepTimeInput accessRef={prepTimeRef} />
-                <ServingsInput accessRef={servingsRef} />
+                <InputPrepTime accessRef={prepTimeRef} />
+                <InputServings accessRef={servingsRef} />
                 <InputWord
                     headerName="Ingredient"
                     labelName="Must contain"
@@ -47,6 +47,7 @@ const SearchFilters = ({ toggleSearchFilters }) => {
                     handleOnClick={onSearch}
                 />
                 <GhostButton
+                    customId="button-cancel"
                     text="Close"
                     handleOnClick={toggleSearchFilters}
                 />

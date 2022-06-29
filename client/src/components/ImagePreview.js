@@ -1,8 +1,8 @@
+import './ImagePreview.css'
 import IconButton from './buttons/IconButton'
 import closeIcon from '../icons/close.svg'
-import './ImagePreview.css'
 
-const ImagePreview = ({ src, onCloseImagePreview }) => {
+const ImagePreview = ({ src, handleOnClose }) => {
 
     const style = {
         position: "absolute",
@@ -14,16 +14,14 @@ const ImagePreview = ({ src, onCloseImagePreview }) => {
     }
 
     return (
-        <div className="squareContainer">
-            <div
-                className="recipeImagePreview"
-                style={style}
-            />
-            <IconButton 
-                type="button"
-                iconPath={closeIcon}
-                handleOnClick={onCloseImagePreview}
-            />
+        <div className="container--square">
+            <div style={style} />
+            {
+                handleOnClose && <IconButton
+                    iconPath={closeIcon}
+                    handleOnClick={handleOnClose}
+                />
+            }
         </div>
     )
 }

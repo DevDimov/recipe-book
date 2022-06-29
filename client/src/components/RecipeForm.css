@@ -55,3 +55,8 @@
 .textarea-container div h2 {
     color: #999;
 }
+
+#button-cancel {
+    margin-inline: auto;
+    min-width: 8rem;
+}

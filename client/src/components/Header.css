@@ -1,0 +1,11 @@
+#header {
+    display: grid;
+    height: 10vh;
+    background-color: var(--orange);
+}
+
+#logotype {
+    color: white;
+    font-size: 1.5rem;
+    place-self: center;
+}

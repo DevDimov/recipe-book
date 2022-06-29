@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './CardRecipe.css'
+import './RecipeCard.css'
 import Recipe from './Recipe'
 
-const CardRecipe = ({ data }) => {
+const RecipeCard = ({ data }) => {
 
     const [showRecipe, setShowRecipe] = useState(false)
 
@@ -31,4 +31,4 @@ const CardRecipe = ({ data }) => {
     )
 }
 
-export default CardRecipe
+export default RecipeCard

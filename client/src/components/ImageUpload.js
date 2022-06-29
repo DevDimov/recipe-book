@@ -1,10 +1,10 @@
-import { useState, useRef, useEffect } from 'react'
-import './UploadRecipeImage.css'
+import { useRef } from 'react'
+import './ImageUpload.css'
 import OutlineButton from './buttons/OutlineButton'
 import uploadIcon from '../icons/file_upload.svg'
 import ImagePreview from './ImagePreview'
 
-const UploadRecipeImage = ({ image, setImage}) => {
+const ImageUpload = ({ image, setImage }) => {
 
     const imageRef = useRef()
 
@@ -23,30 +23,28 @@ const UploadRecipeImage = ({ image, setImage}) => {
         setImage(newImage)
     }
 
-    const onCloseImagePreview = (e) => {
+    const onClosePreview = (e) => {
         e.preventDefault();
         setImage(null)
     }
 
     return (
-        <div className="UploadRecipeImage">
+        <div className="image-upload">
             {
                 image !== null ?
                     <ImagePreview
                         src={URL.createObjectURL(image)}
-                        onCloseImagePreview={onCloseImagePreview}
+                        handleOnClose={onClosePreview}
                     />
                     :
-                    <div className="imageUpload">
+                    <div className="button--image-upload">
                         <OutlineButton
-                            type="button"
                             text="Upload image"
                             iconPath={uploadIcon}
                         />
                         <input
                             ref={imageRef}
                             type="file"
-                            id="imageUpload"
                             name="filename"
                             className="custom-file-input"
                             accept=".jpg,.jpeg"
@@ -58,5 +56,5 @@ const UploadRecipeImage = ({ image, setImage}) => {
     )
 }
 
-export default UploadRecipeImage
+export default ImageUpload
 

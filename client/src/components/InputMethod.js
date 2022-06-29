@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
-import './MethodInput.css'
-import Instruction from './Instruction'
+import './InputMethod.css'
+import InputMethodStep from './InputMethodStep'
 import OutlineButton from './buttons/OutlineButton'
 import addIcon from '../icons/add.svg'
 import closeIcon from '../icons/close.svg'
 
-
-const MethodInput = ({ accessRef }) => {
+const InputMethod = ({ accessRef }) => {
 
     const [value, setValue] = useState('')
     const [showPlaceholder, setShowPlaceholder] = useState(true)
@@ -43,7 +42,6 @@ const MethodInput = ({ accessRef }) => {
 
     const removeMethodStep = (e) => {
         e.preventDefault()
-        console.log('removeStep')
         let newMethod = method.slice(0, method.length - 1)
         setMethod(newMethod)
     }
@@ -57,7 +55,7 @@ const MethodInput = ({ accessRef }) => {
 
                 <div id="instruction-container">
                     {method.length > 0 && method.map((data, index) => {
-                        return (<Instruction
+                        return (<InputMethodStep
                             key={data.slice(0, 10)}
                             step={index + 1}
                             text={data}
@@ -103,4 +101,4 @@ const MethodInput = ({ accessRef }) => {
     )
 }
 
-export default MethodInput
+export default InputMethod

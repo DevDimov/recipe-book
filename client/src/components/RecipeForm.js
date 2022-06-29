@@ -1,18 +1,17 @@
 import { useState, useRef } from 'react'
-import './NewEntryForm.css'
-import TextArea from './MethodInput'
-import UploadRecipeImage from './UploadRecipeImage'
-
+import './RecipeForm.css'
+import InputMethod from './InputMethod'
+import ImageUpload from './ImageUpload'
 import { upsertDocument } from '../js/utilities'
 import Alert from './Alert'
-import ArrowBackButton from './buttons/ArrowBackButton'
-import PrepTimeInput from './PrepTimeInput'
-import ServingsInput from './ServingsInput'
-import CategoryInput from './CategoryInput'
+import InputPrepTime from './InputPrepTime'
+import InputServings from './InputServings'
+import InputCategory from './InputCategory'
 import PrimaryButton from './buttons/PrimaryButton'
 import GhostButton from './buttons/GhostButton'
+import arrowBack from '../icons/arrow_back.svg'
 
-const NewEntryForm = ({ toggleForm }) => {
+const RecipeForm = ({ toggleForm }) => {
 
     const [image, setImage] = useState(null)
     const [submitStatus, setSubmitStatus] = useState('')
@@ -114,11 +113,16 @@ const NewEntryForm = ({ toggleForm }) => {
         <div className="centered">
             <div className="popup-container">
 
-                <ArrowBackButton handleOnClick={handleCancel} />
+                <GhostButton
+                    customId="button-arrow-back"
+                    text="Back"
+                    handleOnClick={handleCancel}
+                    imagePath={arrowBack}
+                />
 
                 <form id="newEntryForm" name="newEntryForm">
 
-                    <UploadRecipeImage image={image} setImage={setImage} />
+                    <ImageUpload image={image} setImage={setImage} />
 
                     <label>
                         <h2>Name</h2>
@@ -128,7 +132,6 @@ const NewEntryForm = ({ toggleForm }) => {
                             name="name"
                             defaultValue='Test'
                             placeholder="Enter a unique name for your recipe"
-                            required
                         />
                     </label>
 
@@ -141,13 +144,13 @@ const NewEntryForm = ({ toggleForm }) => {
                             maxLength="500"
                             defaultValue='Test description'
                             placeholder="Describe your recipe in a few sentences"
-                            required
+                        // required
                         />
                     </label>
 
-                    <CategoryInput accessRef={categoryRef} />
-                    <PrepTimeInput accessRef={prepTimeRef} />
-                    <ServingsInput accessRef={servingsRef} />
+                    <InputCategory accessRef={categoryRef} />
+                    <InputPrepTime accessRef={prepTimeRef} />
+                    <InputServings accessRef={servingsRef} />
 
                     <label>
                         <h2>Ingredients</h2>
@@ -159,14 +162,13 @@ const NewEntryForm = ({ toggleForm }) => {
                             maxLength="1000"
                             resize="vertical"
                             defaultValue='Test'
-                            required
                         />
                     </label>
 
-                    <TextArea accessRef={methodRef} />
+                    <InputMethod accessRef={methodRef} />
 
                     <PrimaryButton text="Save" handleOnClick={handleSubmit} />
-                    <GhostButton text="Cancel" handleOnClick={handleCancel} />
+                    <GhostButton customId="button-cancel" text="Cancel" handleOnClick={handleCancel} />
                     <Alert text={submitStatus} />
 
                 </form>
@@ -175,4 +177,4 @@ const NewEntryForm = ({ toggleForm }) => {
     )
 }
 
-export default NewEntryForm
+export default RecipeForm

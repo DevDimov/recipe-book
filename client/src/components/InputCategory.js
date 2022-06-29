@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
-import './CategoryInput.css'
+import './InputCategory.css'
 
 import InputSuggestions from './InputSuggestions'
 import OutlineButton from './buttons/OutlineButton'
 import LabelButtonsEditable from './LabelButtonsEditable'
 import addIcon from '../icons/add.svg'
 
-
-const CategoryInput = ({ accessRef }) => {
+const InputCategory = ({ accessRef }) => {
 
     const [suggestions, setSuggestions] = useState([])
     const [categories, setCategories] = useState([])
@@ -42,7 +41,8 @@ const CategoryInput = ({ accessRef }) => {
         })
     }
 
-    const onAdd = () => {
+    const onAdd = (e) => {
+        e.preventDefault()
         const input = state.userInput.trim()
         if (input) {
             let newCategories = []
@@ -108,4 +108,4 @@ const CategoryInput = ({ accessRef }) => {
     )
 }
 
-export default CategoryInput
+export default InputCategory

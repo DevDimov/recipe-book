@@ -1,24 +1,20 @@
-@import url('./css/global.css');
 @import url('./css/buttons.css');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700;900&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
-    --button-size: 42px;
-    --border-radius: 0.8rem;
     --grey: #F2F2F1;
     --grey-hover: #E2E2E1;
-    --light-grey:#F1F1F1;
-    --fill-main: #48484A;
+    --light-grey: #F1F1F1;
     --charcoal: #555555;
     --orange: #FF8159;
     --orange-hover: #FF6435;
 }
 
 body {
-  margin: 0;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Source Serif Pro', 'Work Sans', serif, 'Segoe UI', 'Roboto', sans-serif;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Source Serif Pro', 'Work Sans', serif, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 h2 {
@@ -29,11 +25,12 @@ h2 {
 h3 {
     font-weight: 600;
     font-size: 0.8rem;
-    margin: 1rem 0 0.5rem 0;
+    margin: 1.5rem 0 0.75rem 0;
     font-family: "Work Sans";
 }
 
-p, span {
+p,
+span {
     margin: 0;
     font-size: 1rem;
     font-weight: 400;
@@ -68,9 +65,36 @@ textarea {
 button {
     border: none;
     outline: none;
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     min-height: 2.8rem;
     box-sizing: border-box;
     font-family: "Work Sans", sans-serif;
+}
+
+.centered {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.popup-container {
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    width: min(94%, 600px);
+    background-color: #FFF;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
+    max-height: 85%;
+    overflow-y: scroll;
 }

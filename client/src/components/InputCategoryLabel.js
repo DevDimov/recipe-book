@@ -1,7 +1,7 @@
-import './CategoryLabel.css'
+import './InputCategoryLabel.css'
 import close from '../icons/close.svg'
 
-const CategoryLabel = ({ text, onRemove }) => {
+const InputCategoryLabel = ({ text, onRemove }) => {
 
     return (
         <div className="CategoryLabel">
@@ -16,4 +16,4 @@ const CategoryLabel = ({ text, onRemove }) => {
     )
 }
 
-export default CategoryLabel
+export default InputCategoryLabel

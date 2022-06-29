@@ -1,4 +1,4 @@
-import CategoryLabel from "./CategoryLabel"
+import InputCategoryLabel from "./InputCategoryLabel"
 
 const LabelButtonsEditable = ({ array, onRemove }) => {
 
@@ -6,7 +6,7 @@ const LabelButtonsEditable = ({ array, onRemove }) => {
         <div className="categories-container">
             {array.map((name) => {
                 return (
-                    <CategoryLabel
+                    <InputCategoryLabel
                         key={name}
                         text={name}
                         onRemove={onRemove}
