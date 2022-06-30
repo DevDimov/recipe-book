@@ -1,19 +1,16 @@
-.container--square {
+.image-preview {
+    width: 100%;
     position: relative;
-    width: min(100%, 600px);
-    border-radius: 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
-.container--square:after {
+.image-preview:after {
     content: "";
     display: block;
     padding-bottom: 100%;
 }
 
-.container--square .IconButton {
+.image-preview .IconButton {
     position: absolute;
-    top: 0.5rem;
     right: 0.5rem;
+    top: 0.5rem;
 }

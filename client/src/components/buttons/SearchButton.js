@@ -1,4 +1,3 @@
-import './SearchButton.css'
 import searchIcon from '../../icons/search.svg'
 
 const SearchButton = ({ handleOnClick }) => {

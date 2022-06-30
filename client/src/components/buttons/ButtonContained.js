@@ -1,9 +1,9 @@
-const PrimaryButton = ({ text, handleOnClick }) => {
+const ButtonContained = ({ text, handleOnClick }) => {
 
     return (
         <button
             type="button"
-            className="PrimaryButton"
+            className="button button--contained"
             onClick={handleOnClick}
         >
             {text}
@@ -11,4 +11,4 @@ const PrimaryButton = ({ text, handleOnClick }) => {
     )
 }
 
-export default PrimaryButton
+export default ButtonContained

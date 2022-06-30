@@ -62,17 +62,6 @@ textarea {
     font-family: "Work Sans", sans-serif;
 }
 
-button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    min-height: 2.8rem;
-    box-sizing: border-box;
-    font-family: "Work Sans", sans-serif;
-}
-
 .centered {
     width: 100%;
     height: 100vh;
@@ -97,4 +86,8 @@ button {
     filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
     max-height: 85%;
     overflow-y: scroll;
+}
+
+.border-radius--1-5rem {
+    border-radius: 1.5rem;
 }

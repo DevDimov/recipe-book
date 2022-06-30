@@ -1,4 +1,3 @@
-import './ButtonIconClear.css'
 import tuneIcon from '../../icons/tune.svg'
 
 const TuneButton = ({ handleOnClick }) => {

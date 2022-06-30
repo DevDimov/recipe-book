@@ -20,7 +20,7 @@
     line-height: 2;
 }
 
-.recipe .OutlineButton {
+.recipe .button--outlined {
     margin: 2rem auto;
 }
 
@@ -32,4 +32,9 @@
 
 .tag-container {
     margin: 0 0 1rem 0;
+}
+
+.recipe .image-preview {
+    overflow: hidden;
+    border-radius: 1.5rem;
 }

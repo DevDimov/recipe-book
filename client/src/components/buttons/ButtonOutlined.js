@@ -1,15 +1,15 @@
-const OutlineButton = ({ text, iconPath, handleOnClick }) => {
+const ButtonOutlined = ({ text, iconPath, handleOnClick }) => {
 
     return (
         <button
             type="button"
-            className="OutlineButton"
+            className="button button--outlined"
             onClick={handleOnClick}
         >
-            {text}
+            <label>{text}</label>
             {iconPath && <img src={iconPath} alt="" />}
         </button>
     )
 }
 
-export default OutlineButton
+export default ButtonOutlined

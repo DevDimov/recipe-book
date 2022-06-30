@@ -4,8 +4,8 @@ import InputServings from './InputServings'
 import './SearchFilters.css'
 import LabelButtonsSelectable from './LabelButtonsSelectable'
 import InputWord from './InputWord'
-import PrimaryButton from './buttons/PrimaryButton'
-import GhostButton from './buttons/GhostButton'
+import ButtonContained from './buttons/ButtonContained'
+import ButtonText from './buttons/ButtonText'
 
 const SearchFilters = ({ toggleSearchFilters }) => {
 
@@ -42,11 +42,11 @@ const SearchFilters = ({ toggleSearchFilters }) => {
                     labelName="Must contain"
                     accessRef={ingredientRef}
                 />
-                <PrimaryButton
+                <ButtonContained
                     text="Search"
                     handleOnClick={onSearch}
                 />
-                <GhostButton
+                <ButtonText
                     customId="button-cancel"
                     text="Close"
                     handleOnClick={toggleSearchFilters}

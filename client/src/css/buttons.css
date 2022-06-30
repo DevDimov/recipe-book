@@ -5,14 +5,22 @@
     column-gap: 0.2rem;
     padding: 0rem 0.8rem;
     border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    min-height: 2.8rem;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
 }
 
-.button--ghost {
+.button--text {
     color: #000;
     background-color: transparent;
 }
 
-.button--ghost:hover {
+.button--text:hover {
     background-color: var(--light-grey);
 }
 
@@ -31,30 +39,21 @@
 }
 
 .IconButton:hover {
-    cursor: pointer;
     transition: all 0.3s ease;
     background-color: var(--grey-hover);
 }
 
-.OutlineButton {
-    display: flex;
-    column-gap: 0.2rem;
-    align-items: center;
-    margin-inline: auto;
+.button--outlined {
     white-space: nowrap;
-    padding: 0rem 0.8rem;
-    border-radius: 0.5rem;
-    justify-content: center;
     background-color: white;
     border: 2px solid var(--light-grey);
 }
 
-.OutlineButton:hover {
-    cursor: pointer;
+.button--outlined:hover {
     background-color: var(--light-grey);
 }
 
-.OutlineButton img {
+.button--outlined img {
     width: 1.5rem;
 }
 
@@ -62,16 +61,14 @@
     display: flex;
 }
 
-.PrimaryButton {
+.button--contained {
     color: #FFF;
-    min-width: 8rem;
-    margin-inline: auto;
-    border-radius: 0.5rem;
+    /* min-width: 8rem; */
+    /* margin-inline: auto; */
     background-color: var(--orange);
 }
 
-.PrimaryButton:hover {
-    cursor: pointer;
+.button--contained:hover {
     background-color: var(--orange-hover);
 }
 
@@ -101,4 +98,74 @@
 #add-button img {
     width: 2.5rem;
     height: auto;
+}
+
+.ButtonIconClear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.ButtonIconClear:hover {
+    cursor: pointer;
+    background-color: var(--grey);
+    transition: all 0.3s ease;
+}
+
+#searchButton {
+    background-color: var(--grey);
+}
+
+#searchButton:hover {
+    background-color: var(--orange);
+}
+
+#searchButton img {
+    filter: none;
+    transition: all 0.3s ease;
+}
+
+#searchButton img:hover {
+    filter: invert();
+    transition: all 0.3s ease;
+}
+
+#searchIcon {
+    width: 3rem;
+    padding: 0.6rem;
+    border-radius: 999px;
+    box-sizing: border-box;
+}
+
+.IconTextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    border-radius: 999px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    column-gap: 0.5rem;
+}
+
+.IconTextButton span {
+    font-family: 'Work Sans';
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 0.3rem;
+}
+
+.IconTextButton:hover {
+    cursor: pointer;
+    background-color: var(--grey-hover);
+    transition: all 0.3s ease;
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './InputMethod.css'
 import InputMethodStep from './InputMethodStep'
-import OutlineButton from './buttons/OutlineButton'
+import ButtonOutlined from './buttons/ButtonOutlined'
 import addIcon from '../icons/add.svg'
 import closeIcon from '../icons/close.svg'
 
@@ -70,7 +70,7 @@ const InputMethod = ({ accessRef }) => {
                         maxLength="500"
                         onChange={handleOnChange}
                         value={value}
-                        // required={method.length === 0 ? true : false}
+                        required={method.length === 0 ? true : false}
                     />
 
                     {showPlaceholder && <div><h2>{method.length + 1 + '.'}</h2></div>}
@@ -81,14 +81,14 @@ const InputMethod = ({ accessRef }) => {
 
             <div id="buttons-container">
 
-                <OutlineButton
+                <ButtonOutlined
                     text="Add"
                     iconPath={addIcon}
                     handleOnClick={addMethodStep}
                 />
 
                 {method.length > 0 &&
-                    <OutlineButton
+                    <ButtonOutlined
                         text='Remove last'
                         iconPath={closeIcon}
                         handleOnClick={removeMethodStep}

@@ -1,9 +1,9 @@
 import './Recipe.css'
-import OutlineButton from './buttons/OutlineButton'
+import ButtonOutlined from './buttons/ButtonOutlined'
 import ImagePreview from './ImagePreview'
 import arrowBack from '../icons/arrow_back.svg'
 import Tag from './Tag'
-import GhostButton from './buttons/GhostButton'
+import ButtonText from './buttons/ButtonText'
 
 const Recipe = ({ handleOnClose, data }) => {
 
@@ -12,7 +12,7 @@ const Recipe = ({ handleOnClose, data }) => {
             <div className="popup-container">
                 <div className="recipe">
 
-                    <GhostButton 
+                    <ButtonText
                         customId="button-arrow-back"
                         text="Back"
                         handleOnClick={handleOnClose}
@@ -55,8 +55,8 @@ const Recipe = ({ handleOnClose, data }) => {
                             })
                         }
                     </div>
-                    
-                    <OutlineButton
+
+                    <ButtonOutlined
                         text="Close"
                         handleOnClick={handleOnClose}
                     />

@@ -5,6 +5,11 @@
     row-gap: 0.5rem;
 }
 
+.image-upload .image-preview {
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
 .button--image-upload {
     position: relative;
     display: flex;

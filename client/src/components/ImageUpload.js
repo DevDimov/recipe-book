@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import './ImageUpload.css'
-import OutlineButton from './buttons/OutlineButton'
+import ButtonOutlined from './buttons/ButtonOutlined'
 import uploadIcon from '../icons/file_upload.svg'
 import ImagePreview from './ImagePreview'
 
@@ -38,7 +38,7 @@ const ImageUpload = ({ image, setImage }) => {
                     />
                     :
                     <div className="button--image-upload">
-                        <OutlineButton
+                        <ButtonOutlined
                             text="Upload image"
                             iconPath={uploadIcon}
                         />

@@ -14,7 +14,7 @@ const ImagePreview = ({ src, handleOnClose }) => {
     }
 
     return (
-        <div className="container--square">
+        <div className="image-preview">
             <div style={style} />
             {
                 handleOnClose && <IconButton

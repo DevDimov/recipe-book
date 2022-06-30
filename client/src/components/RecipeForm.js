@@ -7,8 +7,8 @@ import Alert from './Alert'
 import InputPrepTime from './InputPrepTime'
 import InputServings from './InputServings'
 import InputCategory from './InputCategory'
-import PrimaryButton from './buttons/PrimaryButton'
-import GhostButton from './buttons/GhostButton'
+import ButtonContained from './buttons/ButtonContained'
+import ButtonText from './buttons/ButtonText'
 import arrowBack from '../icons/arrow_back.svg'
 
 const RecipeForm = ({ toggleForm }) => {
@@ -113,7 +113,7 @@ const RecipeForm = ({ toggleForm }) => {
         <div className="centered">
             <div className="popup-container">
 
-                <GhostButton
+                <ButtonText
                     customId="button-arrow-back"
                     text="Back"
                     handleOnClick={handleCancel}
@@ -144,7 +144,7 @@ const RecipeForm = ({ toggleForm }) => {
                             maxLength="500"
                             defaultValue='Test description'
                             placeholder="Describe your recipe in a few sentences"
-                        // required
+                            required
                         />
                     </label>
 
@@ -166,9 +166,8 @@ const RecipeForm = ({ toggleForm }) => {
                     </label>
 
                     <InputMethod accessRef={methodRef} />
-
-                    <PrimaryButton text="Save" handleOnClick={handleSubmit} />
-                    <GhostButton customId="button-cancel" text="Cancel" handleOnClick={handleCancel} />
+                        <ButtonContained text="Save" handleOnClick={handleSubmit} />
+                        <ButtonText customId="button-cancel" text="Cancel" handleOnClick={handleCancel} />
                     <Alert text={submitStatus} />
 
                 </form>

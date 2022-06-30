@@ -4,7 +4,7 @@ const IconButton = ({ customId, iconPath, handleOnClick }) => {
         <button
             type="button"
             id={customId}
-            className="IconButton"
+            className="button IconButton"
             onClick={handleOnClick}
         >
             <img
