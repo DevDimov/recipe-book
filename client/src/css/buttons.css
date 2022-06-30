@@ -36,8 +36,6 @@
     background-color: var(--grey-hover);
 }
 
-/* OutlineButton */
-
 .OutlineButton {
     display: flex;
     column-gap: 0.2rem;
@@ -63,8 +61,6 @@
 .svgIcon {
     display: flex;
 }
-
-/* PrimaryButton */
 
 .PrimaryButton {
     color: #FFF;

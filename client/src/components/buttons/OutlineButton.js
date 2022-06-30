@@ -1,8 +1,8 @@
-const OutlineButton = ({ type, text, iconPath, handleOnClick }) => {
+const OutlineButton = ({ text, iconPath, handleOnClick }) => {
 
     return (
         <button
-            type={type}
+            type="button"
             className="OutlineButton"
             onClick={handleOnClick}
         >
