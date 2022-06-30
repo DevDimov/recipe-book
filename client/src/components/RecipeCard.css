@@ -5,20 +5,18 @@
 
 .card--recipe {
     max-width: 340px;
-    max-height: 560px;
-
+    min-height: 555px;
     overflow: hidden;
-    display: grid;
-    grid-template-rows: repeat(4, min-content);
     background-color: white;
-
 }
 
 .button--card {
-    display: block;
+    display: grid;
     padding: 0;
+    height: 100%;
     text-align: left;
-    background-color: white;
+    background-color: transparent;
+    grid-template-rows: repeat(3, min-content) auto;
     transition: all 0.3s ease-in-out;
 }
 
@@ -46,13 +44,15 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     white-space: normal;
+    color: #3d3d3d;
 }
 
 .card-recipe__tags {
     display: flex;
-    justify-content: space-between;
+    gap: 2rem;
     padding: 1rem 1.3rem 1.3rem 1.3rem;
     align-self: end;
+    /* color: var(--charcoal); */
 }
 
 .card-recipe__tags h3 {

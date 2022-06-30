@@ -6,7 +6,7 @@ const SearchButton = ({ handleOnClick }) => {
         <button
             type="button"
             id="searchButton"
-            className="IconButton"
+            className="button IconButton"
             onClick={handleOnClick}
         >
             <img

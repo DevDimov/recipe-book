@@ -1,6 +1,6 @@
 import './LabelButtonSelectable.css'
 
-const LabelButtonSelectable = ({ text, onSelect }) => {
+const LabelButtonSelectable = ({ text, onSelect, disabled }) => {
 
     return (
         <div className="labelButtonContainer">
@@ -9,6 +9,7 @@ const LabelButtonSelectable = ({ text, onSelect }) => {
                 id={text}
                 value={text}
                 onChange={onSelect}
+                disabled={disabled}
             >
             </input >
             <label

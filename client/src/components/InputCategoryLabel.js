@@ -5,7 +5,7 @@ const InputCategoryLabel = ({ text, onRemove }) => {
     return (
         <button
             type="button"
-            className="CategoryLabel"
+            className="button CategoryLabel"
             onClick={() => onRemove(text)}
         >
             {text}

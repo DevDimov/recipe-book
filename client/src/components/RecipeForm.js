@@ -39,11 +39,11 @@ const RecipeForm = ({ toggleForm }) => {
         }
         console.log('You clicked Submit.', recipeData);
 
-        // if (validateInput(recipeData)) {
-        //     const response = await upsertDocument(recipeData)
-        //     handleSubmitResponse(response)
-        //     // handleSubmitResponse({ upsertedCount: 1 })
-        // }
+        if (validateInput(recipeData)) {
+            // const response = await upsertDocument(recipeData)
+            // handleSubmitResponse(response)
+            handleSubmitResponse({ upsertedCount: 1 })
+        }
     }
 
     const validateInput = (input) => {

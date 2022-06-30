@@ -75,8 +75,8 @@ const SearchBar = ({ setRecipes }) => {
 
     const search = async () => {
         const userInput = inputRef.current.value.trim()
-        console.log(userInput)
         if (userInput.length > 2) {
+            console.log(userInput)
             // setSearchStatus(`Searching for recipes related to ${state.userInput}`)
             const data = await searchByName({ name: userInput })
             if (data) {

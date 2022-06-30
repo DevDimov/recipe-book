@@ -60,6 +60,7 @@ const InputCategory = ({ accessRef }) => {
                 newCategories.push(input)
                 setCategories(newCategories)
                 setState({ ...state, userInput: '' })
+                if (newCategories.length < 3) inputRef.current.focus()
             }
         }
     }
@@ -85,6 +86,8 @@ const InputCategory = ({ accessRef }) => {
                     maxLength="40"
                     onChange={onChange}
                     value={state.userInput}
+                    placeholder="Add up to three categories related to your recipe"
+                    disabled={categories.length >= 3 ? true : false}
                 />
                 <ButtonOutlined
                     text="Add"
