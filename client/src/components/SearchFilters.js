@@ -47,7 +47,6 @@ const SearchFilters = ({ toggleSearchFilters }) => {
                     handleOnClick={onSearch}
                 />
                 <ButtonText
-                    customId="button-cancel"
                     text="Close"
                     handleOnClick={toggleSearchFilters}
                 />

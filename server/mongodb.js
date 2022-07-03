@@ -1,4 +1,12 @@
-const deleteDocument = async (client, query) => {
+// Load environment variables
+const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, 'config/.env') })
+
+// Connect to database
+const { MongoClient } = require('mongodb')
+const client = new MongoClient(process.env.MONGODB_URI)
+
+const deleteDocument = async (query) => {
     try {
         await client.connect()
         const result = await client.db("recipe_book").collection("vd_recipes").deleteOne(query)
@@ -14,7 +22,7 @@ const deleteDocument = async (client, query) => {
     }
 }
 
-const searchByName = async (client, query) => {
+const searchByName = async (query) => {
     try {
         await client.connect()
         const cursor = client.db("recipe_book").collection("vd_recipes").find({ name: { $regex: query.name, $options: 'i' } })
@@ -28,7 +36,19 @@ const searchByName = async (client, query) => {
     }
 }
 
-const searchWithFilters = async (client, filters) => {
+const searchByExactName = async (name) => {
+    try {
+        await client.connect()
+        const result = await client.db("recipe_book").collection("vd_recipes").findOne({ name }, { projection: { _id: 1 } })
+        return result
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
+
+const searchWithFilters = async (filters) => {
     try {
         await client.connect()
         const query = setQuery(filters)
@@ -55,7 +75,7 @@ const setQuery = (filters) => {
     return query
 }
 
-const getLatestDocuments = async (client, limit) => {
+const getLatestDocuments = async (limit) => {
     try {
         await client.connect()
         const cursor = client.db("recipe_book").collection("vd_recipes").find({}, { limit })
@@ -67,7 +87,7 @@ const getLatestDocuments = async (client, limit) => {
     }
 }
 
-const insertDocument = async (client, newDocument) => {
+const insertDocument = async (newDocument) => {
     try {
         await client.connect()
         return await client.db("recipe_book").collection("vd_recipes").insertOne(newDocument)
@@ -78,7 +98,7 @@ const insertDocument = async (client, newDocument) => {
     }
 }
 
-const upsertDocument = async (client, newDoc) => {
+const upsertDocument = async (newDoc) => {
     try {
         await client.connect()
         const coll = client.db("recipe_book").collection("vd_recipes")
@@ -108,6 +128,7 @@ const upsertDocument = async (client, newDoc) => {
 module.exports = {
     deleteDocument,
     searchByName,
+    searchByExactName,
     searchWithFilters,
     getLatestDocuments,
     insertDocument,

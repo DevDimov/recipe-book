@@ -3,7 +3,7 @@ import './SearchBar.css'
 import TuneButton from './buttons/TuneButton'
 import SearchButton from './buttons/SearchButton'
 import SearchFilters from './SearchFilters'
-import { searchByName } from '../js/utilities'
+import { searchByName } from '../js/mongodb'
 
 const SearchBar = ({ setRecipes }) => {
 

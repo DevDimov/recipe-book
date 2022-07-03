@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import './RecipeForm.css'
 import InputMethod from './InputMethod'
 import ImageUpload from './ImageUpload'
-import { upsertDocument } from '../js/utilities'
+import { insertDocument, checkDuplicateName } from '../js/mongodb'
 import Alert from './Alert'
 import InputPrepTime from './InputPrepTime'
 import InputServings from './InputServings'
@@ -27,26 +27,64 @@ const RecipeForm = ({ toggleForm }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const recipeData = {
-            image: image ? image.name : '',
-            name: nameRef.current.value.trim(),
-            description: descriptionRef.current.value.trim(),
-            category: categoryRef.current,
-            prepTime: parseInt(prepTimeRef.current.value),
-            servings: parseInt(servingsRef.current.value),
-            ingredients: ingredientsRef.current.value.trim(),
-            method: methodRef.current
-        }
-        console.log('You clicked Submit.', recipeData);
+        const formData = new FormData()
+        formData.append('file', image)
+        formData.append('image', image ? image.name : '')
+        formData.append('name', nameRef.current.value.trim())
+        formData.append('description', descriptionRef.current.value.trim())
+        formData.append('category', categoryRef.current)
+        formData.append('prepTime', parseInt(prepTimeRef.current.value))
+        formData.append('servings', parseInt(servingsRef.current.value))
+        formData.append('ingredients', ingredientsRef.current.value.trim())
+        formData.append('method', methodRef.current)
 
-        if (validateInput(recipeData)) {
-            // const response = await upsertDocument(recipeData)
+        const inputValid = await validateInput(formData)
+        if (inputValid) {
+            // const response = insertDocument(formData)
+            // console.log(response)
+            // handleInsertResponse(response)
+
             // handleSubmitResponse(response)
-            handleSubmitResponse({ upsertedCount: 1 })
+            // handleSubmitResponse({ upsertedCount: 1 })
         }
     }
 
-    const validateInput = (input) => {
+    const validateInput = async (formData) => {
+        if (formData.get('file') === null) {
+            setSubmitStatus('Please upload an image')
+            return false
+        }
+        if (formData.get('name').length === 0) {
+            setSubmitStatus('Please add a recipe name')
+            return false
+        }
+
+        const result = await checkDuplicateName({ name: formData.get('name') })
+        if (result.match) {
+            setSubmitStatus(`A recipe with the following _id has the same name: ${result._id}`)
+            return false
+        }
+
+        if (formData.get('description').length === 0) {
+            setSubmitStatus('Please add a recipe description')
+            return false
+        }
+        if (formData.get('category').length === 0) {
+            setSubmitStatus('Please add at least one recipe category')
+            return false
+        }
+        if (formData.get('ingredients').length === 0) {
+            setSubmitStatus('Please add at least one recipe category')
+            return false
+        }
+        if (formData.get('method').length === 0) {
+            setSubmitStatus('Please add at least one method step')
+            return false
+        }
+        return true
+    }
+
+    const validateInputOld = (input) => {
         if (input.image.length === 0) {
             setSubmitStatus('Please upload an image')
             return false
@@ -72,6 +110,18 @@ const RecipeForm = ({ toggleForm }) => {
             return false
         }
         return true
+    }
+
+    const handleInsertResponse = (response) => {
+        let newSubRes = ''
+        if (response.insertedId) {
+            newSubRes = "A new recipe has been successfully added to the database"
+            resetForm()
+        }
+        if (response.err) {
+            newSubRes = "An error has occured. Please try again"
+        }
+        setSubmitStatus(newSubRes)
     }
 
     const handleSubmitResponse = (response) => {
@@ -105,7 +155,7 @@ const RecipeForm = ({ toggleForm }) => {
 
     const handleCancel = (e) => {
         e.preventDefault();
-        console.log('You clicked Cancel.');
+        // console.log('You clicked Cancel.');
         toggleForm()
     }
 
@@ -166,8 +216,8 @@ const RecipeForm = ({ toggleForm }) => {
                     </label>
 
                     <InputMethod accessRef={methodRef} />
-                        <ButtonContained text="Save" handleOnClick={handleSubmit} />
-                        <ButtonText customId="button-cancel" text="Cancel" handleOnClick={handleCancel} />
+                    <ButtonContained text="Save" handleOnClick={handleSubmit} />
+                    <ButtonText text="Cancel" handleOnClick={handleCancel} />
                     <Alert text={submitStatus} />
 
                 </form>

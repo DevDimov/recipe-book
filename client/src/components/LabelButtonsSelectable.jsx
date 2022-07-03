@@ -11,12 +11,10 @@ const LabelButtonsSelectable = ({ headerName, accessRef }) => {
         const newValue = e.currentTarget.value
         if (checked) {
             setSelected([...selected, newValue])
-            // accessRef.current.push(newValue)
         }
         else {
             let newSelected = selected.filter(element => element !== newValue)
             setSelected(newSelected)
-            // accessRef.current = accessRef.current.filter(element => element !== newValue)
         }
     }
 

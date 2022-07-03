@@ -3,15 +3,18 @@ import './ImageUpload.css'
 import ButtonOutlined from './buttons/ButtonOutlined'
 import uploadIcon from '../icons/file_upload.svg'
 import ImagePreview from './ImagePreview'
+import { uploadImage } from '../js/s3'
 
 const ImageUpload = ({ image, setImage }) => {
 
     const imageRef = useRef()
 
-    const selectImage = (e) => {
+    const selectImage = async (e) => {
         e.preventDefault();
-        let file = imageRef.current.files
+
+        const file = imageRef.current.files
         let newImage = null
+
         if (file.length > 0) {
             if (file[0].type.startsWith('image/')) {
                 newImage = file[0]
@@ -21,6 +24,10 @@ const ImageUpload = ({ image, setImage }) => {
             }
         }
         setImage(newImage)
+        // const formData = new FormData()
+        // formData.append('image', newImage)
+        // formData.append('Test', 'Hello from ImageUpload Component')
+        // uploadImage(formData)
     }
 
     const onClosePreview = (e) => {

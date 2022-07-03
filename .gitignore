@@ -1,4 +1,4 @@
 node_modules/
 build/
 server/config/
-images/
+# images/
