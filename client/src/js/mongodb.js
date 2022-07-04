@@ -1,36 +1,44 @@
-const insertDocumentOld = async (data) => {
-    fetch('/insert', {
+const checkDuplicateName = async (query) => {
+    return fetch('/searchByExactName', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(query),
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
+            console.log('Duplicate name check:', data);
+
+            if (data._id.length > 0) {
+                return { match: true, _id: data._id }
+            }
+            return { match: false, _id: '' }
         })
         .catch((error) => {
-            console.error('Error:', error);
+            console.error('Error checking for duplicate name:', error);
+            return error
         })
 }
 
 const insertDocument = async (formData) => {
-    fetch('/insert', {
+    return fetch('/insert', {
         method: 'POST',
         body: formData,
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
+            console.log('Successfully inserted doc to MongoDB:', data);
+            return data
         })
         .catch((error) => {
-            console.error('Error:', error);
+            console.error('Error inserting doc to MongoDB:', error);
+            return error
         })
 }
 
 const upsertDocument = async (data) => {
-    fetch('/upsert', {
+    return fetch('/upsert', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -49,7 +57,7 @@ const upsertDocument = async (data) => {
 }
 
 const searchByName = async (query) => {
-    fetch('/searchByName', {
+    return fetch('/searchByName', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -67,26 +75,7 @@ const searchByName = async (query) => {
         })
 }
 
-const searchByExactName = (query) => {
-    fetch('/searchByExactName', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(query),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            return data
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            return error
-        })
-}
-
-const checkDuplicateName = async (query) => {
+const searchByExactName = async (query) => {
     return fetch('/searchByExactName', {
         method: 'POST',
         headers: {
@@ -97,11 +86,7 @@ const checkDuplicateName = async (query) => {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-
-            if (data._id.length > 0) {
-                return { match: true, _id: data._id }
-            }
-            return { match: false, _id: '' }
+            return data
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -110,7 +95,7 @@ const checkDuplicateName = async (query) => {
 }
 
 const searchWithFilters = async (query) => {
-    fetch('/searchWithFilters', {
+    return fetch('/searchWithFilters', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -128,11 +113,30 @@ const searchWithFilters = async (query) => {
         })
 }
 
+// const getRecipes = async (query) => {
+//     return fetch('/searchByExactName', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(query),
+//     })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Success:', data);
+//             return data
+//         })
+//         .catch((error) => {
+//             console.error('Error:', error);
+//             return error
+//         })
+// }
+
 export {
+    checkDuplicateName,
     insertDocument,
     upsertDocument,
     searchByName,
     searchByExactName,
-    checkDuplicateName,
     searchWithFilters,
 }

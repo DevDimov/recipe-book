@@ -52,7 +52,7 @@ const searchWithFilters = async (filters) => {
     try {
         await client.connect()
         const query = setQuery(filters)
-        console.log(query)
+        // console.log(query)
         const cursor = client.db("recipe_book").collection("vd_recipes").find(query)
         let result = []
         await cursor.forEach(item => result.push(item))
@@ -125,6 +125,19 @@ const upsertDocument = async (newDoc) => {
     }
 }
 
+const deleteDocumentById = async (docId) => {
+    try {
+        await client.connect()
+        const result = await client.db("recipe_book").collection("vd_recipes").deleteOne({ _id: docId })
+        return result
+    } catch (error) {
+        console.error(error);
+        return { error: error.message }
+    } finally {
+        await client.close();
+    }
+}
+
 module.exports = {
     deleteDocument,
     searchByName,
@@ -132,5 +145,6 @@ module.exports = {
     searchWithFilters,
     getLatestDocuments,
     insertDocument,
-    upsertDocument
+    upsertDocument,
+    deleteDocumentById
 }

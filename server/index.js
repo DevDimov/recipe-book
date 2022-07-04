@@ -9,8 +9,7 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
 const { s3UploadObject } = require('./s3/s3UploadObject')
-
-// const fetch = require('node-fetch')
+const { s3GetObject } = require('./s3/s3GetObject')
 
 // Set up express
 const express = require('express')
@@ -32,30 +31,79 @@ app.get('/', (req, res) => {
 
 app.post('/insert', upload.single('file'), async (req, res) => {
     try {
-        // console.log(req.body)
-        // console.log(req.file)
-        const mongoResponse = await mongodb.insertDocument(req.body)
+        const formData = {
+            ...req.body,
+            category: req.body.category.split(','),
+            prepTime: parseInt(req.body.prepTime),
+            servings: parseInt(req.body.servings),
+            method: req.body.method.split(',')
+        }
+        // console.log(formData)
+
+        const mongoResponse = await mongodb.insertDocument(formData)
         console.log(mongoResponse)
         const docId = mongoResponse.insertedId
-        let s3Response = {}
-        // if (docId) {
+
         s3Response = await s3UploadObject(req.file, docId)
+        if (s3Response.error) {
+            mongodb.deleteDocumentById(docId)
+            return res.status(404).json({ error: 'Unable to upload image' })
+        }
+
         return res.status(200).json({ insertedId: docId, mongodb: mongoResponse, s3: s3Response })
-        // }
 
     } catch (err) {
-        return res.status(500).json(err.message)
+        return res.status(500).json({ error: err.message })
     }
 })
 
-// app.post('/insert', async (req, res) => {
-//     try {
-//         const response = await mongodb.insertDocument(req.body)
-//         return res.status(200).json(response)
-//     } catch (err) {
-//         return res.status(500).json(err.message)
-//     }
-// })
+app.get('/images/:key', async (req, res) => {
+    const objectKey = req.params.key
+    // console.log(objectKey)
+    try {
+        return s3GetObject(objectKey)
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
+
+app.get('/recipes/:limit', async (req, res) => {
+    try {
+        const limit = parseInt(req.params.limit)
+        const response = await mongodb.getLatestDocuments(limit)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
+
+app.post('/searchByName', async (req, res) => {
+    try {
+        const response = await mongodb.searchByName(req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
+
+app.post('/searchByExactName', async (req, res) => {
+    try {
+        const mongoResponse = await mongodb.searchByExactName(req.body.name)
+        const response = { _id: mongoResponse ? mongoResponse._id.toString() : '' }
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
+
+app.post('/searchWithFilters', async (req, res) => {
+    try {
+        const response = await mongodb.searchWithFilters(req.body)
+        return res.status(200).json(response)
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
 
 app.post('/upsert', async (req, res) => {
     try {
@@ -65,52 +113,6 @@ app.post('/upsert', async (req, res) => {
         return res.status(500).json(err)
     }
 })
-
-app.post('/searchByName', async (req, res) => {
-    try {
-        // console.log(req.body)
-        const response = await mongodb.searchByName(req.body)
-        return res.status(200).json(response)
-    } catch (err) {
-        return res.status(500).json(err.message)
-    }
-})
-
-app.post('/searchByExactName', async (req, res) => {
-    try {
-        console.log(req.body)
-        const mongoResponse = await mongodb.searchByExactName(req.body.name)
-        console.log(mongoResponse)
-        const response = { _id: mongoResponse ? mongoResponse._id.toString() : '' }
-        console.log(response)
-        return res.status(200).json(response)
-    } catch (err) {
-        return res.status(500).json(err.message)
-    }
-})
-
-app.post('/searchWithFilters', async (req, res) => {
-    try {
-        // console.log(req.body)
-        const response = await mongodb.searchWithFilters(req.body)
-        return res.status(200).json(response)
-    } catch (err) {
-        return res.status(500).json(err.message)
-    }
-})
-
-// app.post('/uploadImage', upload.single('image'), async (req, res) => {
-//     try {
-//         console.log(req.body)
-//         console.log(req.file)
-//         // console.log(req.body.formData())
-//         // const response = await s3UploadObject()
-//         // return res.json(response)
-//         return res.json({ message: 'Response from /uploadImage' })
-//     } catch (err) {
-//         return res.status(500).json(err.message)
-//     }
-// })
 
 // app.use(function (req, res) {
 //     res.status(404).sendFile(path.resolve(__dirname, '../client/build/html', '404.html'))

@@ -33,19 +33,20 @@ const RecipeForm = ({ toggleForm }) => {
         formData.append('name', nameRef.current.value.trim())
         formData.append('description', descriptionRef.current.value.trim())
         formData.append('category', categoryRef.current)
-        formData.append('prepTime', parseInt(prepTimeRef.current.value))
-        formData.append('servings', parseInt(servingsRef.current.value))
+        // categoryRef.current.forEach(tag => formData.append('category', tag))
+        formData.append('prepTime', prepTimeRef.current.value)
+        formData.append('servings', servingsRef.current.value)
         formData.append('ingredients', ingredientsRef.current.value.trim())
         formData.append('method', methodRef.current)
+        // methodRef.current.forEach(step => formData.append('method', step))
 
         const inputValid = await validateInput(formData)
         if (inputValid) {
-            // const response = insertDocument(formData)
-            // console.log(response)
+            setSubmitStatus('Saving recipe...')
+            const response = await insertDocument(formData)
+            console.log(response)
             // handleInsertResponse(response)
-
-            // handleSubmitResponse(response)
-            // handleSubmitResponse({ upsertedCount: 1 })
+            // handleInsertResponse({ upsertedCount: 1 }) // for development
         }
     }
 
@@ -84,67 +85,38 @@ const RecipeForm = ({ toggleForm }) => {
         return true
     }
 
-    const validateInputOld = (input) => {
-        if (input.image.length === 0) {
-            setSubmitStatus('Please upload an image')
-            return false
-        }
-        if (input.name.length === 0) {
-            setSubmitStatus('Please add a recipe name')
-            return false
-        }
-        if (input.description.length === 0) {
-            setSubmitStatus('Please add a recipe description')
-            return false
-        }
-        if (input.category.length === 0) {
-            setSubmitStatus('Please add at least one recipe category')
-            return false
-        }
-        if (input.ingredients.length === 0) {
-            setSubmitStatus('Please add at least one recipe category')
-            return false
-        }
-        if (input.method.length === 0) {
-            setSubmitStatus('Please add at least one method step')
-            return false
-        }
-        return true
-    }
-
     const handleInsertResponse = (response) => {
         let newSubRes = ''
         if (response.insertedId) {
             newSubRes = "A new recipe has been successfully added to the database"
             resetForm()
         }
-        if (response.err) {
-            newSubRes = "An error has occured. Please try again"
+        if (response.error) {
+            newSubRes = `An error has occured. ${response.error}`
         }
         setSubmitStatus(newSubRes)
     }
 
-    const handleSubmitResponse = (response) => {
-        let newSubRes = ''
-        if (response.upsertedCount === 1) {
-            newSubRes = "A new recipe has been successfully added"
-            resetForm()
-        }
-        if (response.modifiedCount === 1) {
-            newSubRes = "An existing recipe with the same name has been updated"
-            resetForm()
-        }
-        if (response.upsertedCount === 0 && response.modifiedCount === 0) {
-            newSubRes = "This recipe name and information has already been added before"
-        }
-        if (response.err) {
-            newSubRes = "An error has occured. Please try again"
-        }
-        setSubmitStatus(newSubRes)
-    }
+    // const handleSubmitResponse = (response) => {
+    //     let newSubRes = ''
+    //     if (response.upsertedCount === 1) {
+    //         newSubRes = "A new recipe has been successfully added"
+    //         resetForm()
+    //     }
+    //     if (response.modifiedCount === 1) {
+    //         newSubRes = "An existing recipe with the same name has been updated"
+    //         resetForm()
+    //     }
+    //     if (response.upsertedCount === 0 && response.modifiedCount === 0) {
+    //         newSubRes = "This recipe name and information has already been added before"
+    //     }
+    //     if (response.err) {
+    //         newSubRes = "An error has occured. Please try again"
+    //     }
+    //     setSubmitStatus(newSubRes)
+    // }
 
     const resetForm = () => {
-        console.log('You clicked reset form.')
         setImage(null)
         nameRef.current.value = ''
         descriptionRef.current.value = ''
@@ -155,7 +127,6 @@ const RecipeForm = ({ toggleForm }) => {
 
     const handleCancel = (e) => {
         e.preventDefault();
-        // console.log('You clicked Cancel.');
         toggleForm()
     }
 

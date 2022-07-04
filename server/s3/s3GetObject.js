@@ -1,12 +1,7 @@
 const { GetObjectCommand } = require("@aws-sdk/client-s3")
-const { s3Client } = require("../s3/s3Client.js")
+const { s3Client } = require("./s3Client.js")
 
-const bucketParams = {
-    Bucket: "recipebook-images",
-    Key: "one-pan-pasta.jpg",
-};
-
-const run = async () => {
+const s3GetObject = async (objectKey) => {
     try {
         // Create a helper function to convert a ReadableStream to a string.
         const streamToString = (stream) =>
@@ -18,15 +13,18 @@ const run = async () => {
             });
 
         // Get the object from the Amazon S3 bucket. It is returned as a ReadableStream.
-        const data = await s3Client.send(new GetObjectCommand(bucketParams));
-        // return data; // For unit tests.
+        const response = await s3Client.send(new GetObjectCommand({
+            Bucket: "recipebook-images",
+            Key: objectKey,
+        }))
         // Convert the ReadableStream to a string.
-        const bodyContents = await streamToString(data.Body);
-        console.log(bodyContents);
-        return bodyContents;
+        const bodyContents = await streamToString(response.Body);
+        return bodyContents
+
     } catch (err) {
         console.log("Error", err);
+        return { error: err.message }
     }
 };
 
-run();
+module.exports = { s3GetObject }

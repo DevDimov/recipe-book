@@ -6,7 +6,7 @@ const ButtonOutlined = ({ text, iconPath, handleOnClick }) => {
             className="button button--outlined"
             onClick={handleOnClick}
         >
-            <label>{text}</label>
+            {text}
             {iconPath && <img src={iconPath} alt="" />}
         </button>
     )
