@@ -5,7 +5,7 @@ import arrowBack from '../icons/arrow_back.svg'
 import Tag from './Tag'
 import ButtonText from './buttons/ButtonText'
 
-const Recipe = ({ handleOnClose, data }) => {
+const Recipe = ({ handleOnClose, data, image }) => {
 
     return (
         <div className="centered">
@@ -19,7 +19,7 @@ const Recipe = ({ handleOnClose, data }) => {
                         imagePath={arrowBack}
                     />
 
-                    <ImagePreview src={`./images/${data.image}`} />
+                    <ImagePreview src={image ? image : `./images/pending-image.jpg`} />
 
                     <div>
                         <h1>{data.name}</h1>

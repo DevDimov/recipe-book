@@ -4,22 +4,21 @@ import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import RecipeSubmit from './components/RecipeSubmit'
 import Recipes from './components/Recipes';
+import { getRecipes } from './js/mongodb'
 
 function App() {
 
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        fetch('./testData/fiveRecipes.json')
+        // fetch('./testData/twoRecipes.json') // for debugging
+        fetch('/recipes/10')
             .then(res => res.json())
             .then(data => setRecipes(data))
+            .catch((error) => {
+                console.error('Error:', error);
+            })
     }, [])
-
-    // const getLatestRecipes = async () => {
-    //     const response = await fetch('./testData/twoRecipes.json')
-    //     const newRecipes = await response.json()
-    //     setRecipes(newRecipes)
-    // }
 
     return (
         <>

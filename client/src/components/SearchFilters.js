@@ -6,31 +6,34 @@ import LabelButtonsSelectable from './LabelButtonsSelectable'
 import InputWord from './InputWord'
 import ButtonContained from './buttons/ButtonContained'
 import ButtonText from './buttons/ButtonText'
+import { searchWithFilters } from '../js/mongodb'
 
-const SearchFilters = ({ toggleSearchFilters }) => {
+const SearchFilters = ({ toggleSearchFilters, setRecipes }) => {
 
     const categoryRef = useRef([])
     const prepTimeRef = useRef(0)
     const servingsRef = useRef(0)
     const ingredientRef = useRef('')
 
-    const onSearch = () => {
+    const onSearch = async () => {
         const filters = {
             category: categoryRef.current,
             prepTime: prepTimeRef.current.value,
             servings: servingsRef.current.value,
             ingredientMatch: ingredientRef.current.trim()
         }
-        console.log(filters)
+        // console.log(filters) // for debugging
+        const newData = await searchWithFilters(filters)
+        if (!newData.error) setRecipes(newData)
     }
 
     return (
         <div className="centered">
-            <form 
+            <form
                 id="search-filters"
                 className="popup-container"
                 name="search-filters"
-                >
+            >
                 <LabelButtonsSelectable
                     headerName="Category"
                     accessRef={categoryRef}

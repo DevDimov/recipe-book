@@ -7,17 +7,17 @@ import { s3GetImage } from '../js/s3'
 const RecipeCard = ({ data }) => {
 
     const [showRecipe, setShowRecipe] = useState(false)
-    const [image, setImage] = useState()
+    const [image, setImage] = useState('')
 
     const handleOnClose = () => setShowRecipe(false)
 
     useEffect(() => {
-        // const fetchImage = async () => {
-        //     const objectKey = data._id + "_" + data.image
-        //     const newImage = await s3GetImage(objectKey)
-        //     setImage(newImage)
-        // }
-        // fetchImage()
+        const fetchImage = async () => {
+            const objectKey = data._id + "_" + data.image
+            const newImage = await s3GetImage(objectKey)
+            setImage(newImage)
+        }
+        fetchImage()
     }, [data])
 
     return (
@@ -27,10 +27,7 @@ const RecipeCard = ({ data }) => {
                     className="button button--card"
                     onClick={() => setShowRecipe(true)}
                 >
-                    <ImagePreview
-                        // src={`./images/${data.image}`}
-                        src={image ? image : `./images/pending-image.jpg`}
-                    />
+                    <ImagePreview src={image ? image : `./images/pending-image.jpg`} />
                     <h2 className="card-recipe__title">{data.name}</h2>
                     <p className="card-recipe__supporting-text">{data.description}</p>
                     <div className="card-recipe__tags">
@@ -40,7 +37,14 @@ const RecipeCard = ({ data }) => {
                     </div>
                 </button>
             </div>
-            {showRecipe ? <Recipe handleOnClose={handleOnClose} data={data} /> : null}
+            {showRecipe ?
+                <Recipe
+                    handleOnClose={handleOnClose}
+                    data={data}
+                    image={image}
+                />
+                : null
+            }
         </>
     )
 }

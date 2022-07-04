@@ -33,19 +33,17 @@ const RecipeForm = ({ toggleForm }) => {
         formData.append('name', nameRef.current.value.trim())
         formData.append('description', descriptionRef.current.value.trim())
         formData.append('category', categoryRef.current)
-        // categoryRef.current.forEach(tag => formData.append('category', tag))
         formData.append('prepTime', prepTimeRef.current.value)
         formData.append('servings', servingsRef.current.value)
         formData.append('ingredients', ingredientsRef.current.value.trim())
         formData.append('method', methodRef.current)
-        // methodRef.current.forEach(step => formData.append('method', step))
 
         const inputValid = await validateInput(formData)
         if (inputValid) {
             setSubmitStatus('Saving recipe...')
             const response = await insertDocument(formData)
             console.log(response)
-            // handleInsertResponse(response)
+            handleInsertResponse(response)
             // handleInsertResponse({ upsertedCount: 1 }) // for development
         }
     }

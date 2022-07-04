@@ -61,7 +61,10 @@ app.get('/images/:key', async (req, res) => {
     const objectKey = req.params.key
     // console.log(objectKey)
     try {
-        return s3GetObject(objectKey)
+        const image = await s3GetObject(objectKey)
+        res.writeHead(200, { 'Content-Type': 'image/jpeg' })
+        res.end(image) // Send the file data to the browser.
+        // return res.send(response)
     } catch (err) {
         return res.status(500).json({ error: err.message })
     }
@@ -117,6 +120,19 @@ app.post('/upsert', async (req, res) => {
 // app.use(function (req, res) {
 //     res.status(404).sendFile(path.resolve(__dirname, '../client/build/html', '404.html'))
 // })
+
+app.get('/test', async (req, res) => {
+    const fs = require("fs");
+
+    try {
+        const image = fs.readFileSync("D:\\Visual Studio Code\\recipe-book\\server\\test\\pending-image")
+        res.writeHead(200, { 'Content-Type': 'image/jpeg' })
+        res.end(image) // Send the file data to the browser.
+        // return image
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+})
 
 app.listen(port, () => {
     console.log('Server started at http://localhost:' + port)
