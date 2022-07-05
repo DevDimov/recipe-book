@@ -3,20 +3,20 @@ const path = require('path')
 require('dotenv').config({ path: path.join(__dirname, 'config/.env') })
 
 // Import database CRUD actions
-const mongodb = require('./mongodb.js')
+const mongodb = require('./server/mongodb.js')
 
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
-const { s3UploadObject } = require('./s3/s3UploadObject')
-const { s3GetObject } = require('./s3/s3GetObject')
+const { s3UploadObject } = require('./server/s3/s3UploadObject')
+const { s3GetObject } = require('./server/s3/s3GetObject')
 
 // Set up express
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080
 
-app.use(express.static(path.join(__dirname, '../client/build'), { extensions: ['html', 'css', 'js', 'svg'] }))
+app.use(express.static(path.join(__dirname, './client/build'), { extensions: ['html', 'css', 'js', 'svg'] }))
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
@@ -26,7 +26,7 @@ app.get("/api", (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
 })
 
 app.post('/insert', upload.single('file'), async (req, res) => {
@@ -116,10 +116,6 @@ app.post('/upsert', async (req, res) => {
         return res.status(500).json(err)
     }
 })
-
-// app.use(function (req, res) {
-//     res.status(404).sendFile(path.resolve(__dirname, '../client/build/html', '404.html'))
-// })
 
 app.get('/test', async (req, res) => {
     const fs = require("fs");
