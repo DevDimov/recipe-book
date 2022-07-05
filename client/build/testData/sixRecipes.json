@@ -1,0 +1,128 @@
+[
+    {
+        "_id": "6278e3df56d91cf2530eead5",
+        "name": "Martha’s One Pan Pasta",
+        "category": [
+            "Pasta",
+            "Main meal"
+        ],
+        "description": "This one-pot-wonder sees both pasta and sauce cooked together resulting in perfectly al dente spaghetti and 50% less washing up!",
+        "image": "one-pan-pasta.jpg",
+        "ingredients": "200g spaghetti\n200g cherry tomatoes, sliced in half\n100g baby spinach leaves\n1 small onion, finely sliced\n3 cloves garlic, finely sliced\n1 red chilli, finely chopped\nA small handful of basil leaves, roughly chopped\n2 tbsp extra virgin olive oil\n50g pecorino cheese, grated\nSea salt and ground black pepper",
+        "method": [
+            "Arrange the tomatoes, spinach, onion, garlic, and chilli across the base of a large frying pan. Nestle the spaghetti in the centre of the pan and pour over the olive oil and 600ml of water or chicken stock.",
+            "Place the pan over a medium high heat and bring the contents of the pan to the boil. Using a tongs, stir the pasta regularly and cook for about 9 minutes until it’s cooked and the liquid has nearly evaporated creating a sauce."
+        ],
+        "prepTime": 15,
+        "servings": 2
+    },
+    {
+        "_id": "62b6c59732d5ff72c87bada6",
+        "name": "Easy Chicken Biryani",
+        "category": [
+            "Main meal",
+            "Rice"
+        ],
+        "description": "Donal Skehan's quick version of this Indian classic results in perfectly cooked rice and moist chicken – just as it should be. As if that wasn’t enough, you only need to use one pan so there’s minimal washing up!",
+        "image": "easy-chicken-biryani.jpg",
+        "ingredients": "150g basmati rice, rinsed\n600g boneless chicken thighs, cut into bite size pieces\n2 tbsp sunflower oil\n1 large onion, thinly sliced\n2 inch piece of ginger peeled and finely chopped\n1 tsp turmeric\n½ tsp ground cardamom\n1 stick cinnamon\n1 bay leaf\n25g golden raisins\n600ml chicken stock\n25g unskinned whole almonds, toasted and roughly chopped\n2 tbsp chopped coriander.",
+        "method": [
+            "In a heavy based casserole pot heat the oil. Brown the chicken in the oil till the edges are golden. Remove to a plate.",
+            "Lower the heat and add the onion and ginger, cook gently till soft but not coloured, add the spices and cook for another 3-4 minutes or until the spices become fragrant.",
+            "Add the rice and the chicken and stir to coat both in the spices. Add the raisins and bay leaf. Pour in the stock and bring to the boil. Cover the pan and simmer for 18 minutes or until rice is cooked and the chicken is tender.",
+            "Take off the heat and let stand for 5 minutes. Remove the bay leaf and the cinnamon stick. Taste and adjust seasoning. Serve garnished with almonds and coriander."
+        ],
+        "prepTime": 45,
+        "servings": 4
+    },
+    {
+        "_id": "62c2b83fb086559348e1c5a5",
+        "image": "cumin-and-lemon-chicken-with-spiced-rice.jpg",
+        "name": "Cumin and Lemon Chicken with Spiced Rice",
+        "description": "This spiced rice goes well with all kinds of meat and fish. Try serving it with lamb chops or salmon fillets.",
+        "category": [
+            "Main meal"
+        ],
+        "prepTime": 50,
+        "servings": 4,
+        "ingredients": "400g essential British Chicken Mini Breast Fillets\r\n1 tbsp sunflower oil\r\n1½ tsp ground cumin\r\n2 garlic cloves, crushed\r\n1 lemon, zest and juice\r\n½ 375g pack Tilda Basmati & Wild Rice\r\n1 large onion, finely sliced\r\n15g unsalted butter\r\n1 leek, halved and sliced\r\n2 carrots, grated\r\n1 tsp ground cinnamon\r\n50g dried cranberries\r\n25g flat leaf parsley, roughly chopped\r\n4 tbsp natural yogurt",
+        "method": [
+            "Preheat the grill to high. Toss the chicken in a bowl with ½ tbsp oil, ½ tsp cumin, the garlic and the juice of ½ lemon; season and set aside. Put the rice in a large saucepan and cover with plenty of cold water. Bring to the boil, then simmer for 20 minutes; drain.",
+            "Meanwhile, heat the remaining ½ tbsp oil in a large frying pan over a medium-high heat. Add the onion and a pinch of salt; fry for 10 minutes, stirring, until just golden. Add the butter, leek and carrots and fry for another 3-4 minutes. Stir in the remaining 1 tsp cumin, the cinnamon and cranberries; fry for another 2-3 minutes. Stir through the drained rice and the remaining juice of ½ lemon; check the seasoning.",
+            "Arrange the chicken fillets in a foil-lined shallow baking tray and grill for 5-6 minutes on each side, until the juices run clear and there is no pink meat. Toss the parsley through the rice, then stir most of the lemon zest through the yogurt, with the remainder sprinkled on top. Serve the chicken with the rice and the lemon yogurt alongside."
+        ]
+    },
+    {
+        "_id": "62c2bbb588673cb0c1523ef1",
+        "image": "carrot-and-chickpea-veggie-burger.jpg",
+        "name": "Carrot and Chickpea Veggie Burger",
+        "description": "A healthy street food recipe by Tasty. It's ideal for vegetarians and contains 11 grams of protein.",
+        "category": [
+            "Main meal",
+            "Burger"
+        ],
+        "prepTime": 35,
+        "servings": 3,
+        "ingredients": "15.5 oz chickpeas (440 g), drained & rinsed\r\n1 ½ cups oats (150 g)\r\n½ cup shredded carrot (55 g)\r\n½ cup red onion (75 g), diced\r\n1 egg\r\n1 teaspoon salt\r\n½ teaspoon pepper\r\n½ teaspoon garlic powder\r\n1 teaspoon olive oil\r\n½ lemon, juiced\r\n1 tablespoon olive oil\r\n\r\nBurger toppings:\r\nwhole wheat burger bun\r\ntomato\r\n1 head butter lettuce\r\nred onion\r\navocado\r\nmustard, to taste",
+        "method": [
+            "In a food processor, combine chickpeas, oats, carrots, red onion, egg, salt, pepper, garlic powder, and olive oil. Blend just until combined.",
+            "Add lemon juice and blend again until well-combined.",
+            "Scoop out a handful of the mixture and form into patties.",
+            "Heat a tablespoon of olive oil over medium-high heat.",
+            "Cook the patty 4-5 minutes on each side, or until golden brown.",
+            "Assemble with your favorite burger toppings."
+        ]
+    },
+    {
+        "_id": "62c2bf625279cc1ed14eaad7",
+        "image": "carrot-cumin-pilaf-rice.jpg",
+        "name": "Carrot and Cumin Pilaf Rice",
+        "description": "This vegetarian rice pilaf is filled with heady spices and fragrance. The beauty of this dish is that it’s all cooked in one dish and, after only a little effort, gets finished in the oven. Fluff up the rice and you have a wonderful one pot dinner ready to go.",
+        "category": [
+            "Main meal",
+            "Rice"
+        ],
+        "prepTime": 35,
+        "servings": 2,
+        "ingredients": "1 tbsp rapeseed oil\r\n1 onion, finely chopped\r\n2 carrots, sliced thinly\r\n1 tsp cumin\r\n1 tsp turmeric\r\n1 tsp curry powder\r\n200g Basmati rice\r\n350ml vegetable stock\r\n1 x 400g tin chickpeas, drained and rinsed\r\nA good handful of flat leaf parsley, finely chopped\r\n1 lemon",
+        "method": [
+            "Preheat the oven to 200˚C.",
+            "Place a low-sided casserole dish over a medium high heat. Add the oil and fry the onion and carrot for 6 minutes or until the onion are just tender. Add in the spices and fry for another 2-3 minutes.",
+            "Stir through the rice, vegetable stock and chickpeas. Bring to a steady simmer before covering with a lid and transferring to the oven to cook for 35 minutes. Fluff up with a fork after half the cooking time.",
+            "Once cooked stir through the parsley and a squeeze of lemon juice."
+        ]
+    },
+    {
+        "_id": "62c3f426b2d304159ce77b4f",
+        "image": "chickpea-shawarma-wraps.jpg",
+        "name": "Chickpea Shawarma Sandwich",
+        "description": "Amazing, 30-minute chickpea shawarma sandwich with spicy baked chickpeas, a creamy garlic dill sauce, and lots of fresh vegetables. A healthy, quick, and satisfying plant-based meal!",
+        "category": [
+            "Vegetarian",
+            "Vegan"
+        ],
+        "prepTime": 30,
+        "servings": 2,
+        "ingredients": "CHICKPEAS\r\n425 g can chickpeas (rinsed, drained and patted dry)\r\n15 ml grape seed or avocado oil\r\n1 tsp each cumin and garlic powder\r\n1/2 tsp each sea salt + black pepper\r\n1/2 tsp smoked (or regular) paprika\r\n1/4 tsp each ground coriander + cinnamon\r\n\r\nGARLIC DILL SAUCE\r\n60 g hummus (or tahini*)\r\n15 ml lemon juice (juice of 1/2 lemon as original recipe is written)\r\n3/4-1 tsp dried dill*\r\n9 g garlic (minced)\r\n30-45 ml water or unsweetened almond milk (to thin)\r\nSea salt to taste (optional // I didn’t need any)\r\n\r\nFOR SERVING\r\nVegan pita or flatbread (ensure gluten-free for GF eaters)\r\nSliced tomato (optional)\r\nSliced red onion (optional)\r\nRomaine lettuce or fresh parsley, chopped (optional)\r\nChili garlic sauce (optional)\r\n\r\nNOTES\r\n*If you don’t have hummus, tahini will make a great base substitution for the sauce – just adjust the seasonings to accommodate the lack of flavor tahini provides.\r\n*You can sub 2-3 tsp fresh dill per 3/4-1 tsp dried dill.",
+        "method": [
+            "Preheat oven to 400 degrees F (204 C) and line a large baking sheet (or more if making larger batch) with foil or parchment paper.",
+            "In a small mixing bowl toss rinsed and dried chickpeas with oil and spices and spread on baking sheet. Bake for 25 minutes or until slightly crispy and golden brown. Once slightly cooled",
+            " sample and adjust seasonings as desired (I added a bit more sea salt",
+            " cumin and garlic powder for extra flavor).",
+            "While the chickpeas are roasting",
+            " prepare your sauce by adding hummus",
+            " lemon juice",
+            " dill and garlic to a mixing bowl and whisking to combine. Add enough water or almond milk to thin so it’s pourable.",
+            "Taste and adjust seasonings as needed. Add more garlic for more zing",
+            " salt for savoriness",
+            " lemon juice for freshness",
+            " and dill for a more intense herb flavor. I found mine didn’t need anything else.",
+            "To serve",
+            " warm pitas or flatbread in the microwave for 15-30 seconds (or the still warm oven for 1 minute) and top with desired amount of chickpeas",
+            " sauce",
+            " and vegetables of choice.",
+            "Best when fresh",
+            " though leftover chickpeas and sauce will keep well stored separately in the refrigerator for 3-4 days."
+        ]
+    }
+]
