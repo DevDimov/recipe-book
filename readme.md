@@ -1,18 +1,16 @@
 # Recipe App with React, Node, MongoDB and AWS
 
-A minimalist app providing storage and easy access to one's favourite recipes in one place.
-
-It uses React on the front-end, and Node.js on the back-end. It stores recipe information in a MongoDB database and recipe images in an AWS S3 bucket.
+A minimalist recipe app for storing one's favourite recipes in one place. It uses React on the front-end, and Node.js on the back-end. It stores recipe information in a MongoDB database and recipe images in an AWS S3 bucket.
 
 ## Demo
 
 Deployed on AWS Elastic Beanstalk and available here: https://vd-weatherapp.herokuapp.com/
 
-## Screenshots
+## Screenshot
 
-![Home page](https://raw.githubusercontent.com/DevDimov/react-openweather-app/main/client/public/images/gifs/location-controls.gif "Home page")
+![Home page](https://raw.githubusercontent.com/DevDimov/recipe-book/main/client/public/images/screenshot-recipebook-homepage.jpg "Home page")
 
-![Display modes](https://raw.githubusercontent.com/DevDimov/react-openweather-app/main/client/public/images/gifs/view-modes.gif "Two display modes, detailed and compact")
+![Submit new recipe](https://raw.githubusercontent.com/DevDimov/recipe-book/main/client/public/images/screenshot-recipebook-submit.jpg "Submit new recipe")
 
 ## Motivation
 
