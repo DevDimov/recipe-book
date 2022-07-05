@@ -15,7 +15,7 @@ const RecipeCard = ({ data }) => {
         const fetchImage = async () => {
             const objectKey = data._id + "_" + data.image
             const newImage = await s3GetImage(objectKey)
-            setImage(newImage)
+            if (!newImage.error) setImage(newImage)
         }
         fetchImage()
     }, [data])

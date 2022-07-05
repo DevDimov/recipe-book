@@ -4,16 +4,18 @@
 }
 
 .card--recipe {
-    max-width: 340px;
-    min-height: 555px;
     overflow: hidden;
     background-color: white;
+    flex: 1 0 30%;
+    min-width: 260px;
+    max-width: 460px;
 }
 
 .button--card {
     display: grid;
     padding: 0;
     height: 100%;
+    width: 100%;
     text-align: left;
     background-color: transparent;
     grid-template-rows: repeat(3, min-content) auto;

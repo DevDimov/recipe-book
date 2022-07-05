@@ -1,8 +1,9 @@
 .recipes {
     display: flex;
+    justify-content: center;
     gap: min(3.4rem, 5vw);
-    padding: 0 min(3.4rem, 5vw);
-    margin: 6rem 0 6rem 0;
+    padding: 1rem min(3.4rem, 5vw);
     flex-wrap: wrap;
     position: unset;
+    margin: 6rem 0;
 }

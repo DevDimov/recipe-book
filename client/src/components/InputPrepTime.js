@@ -21,7 +21,7 @@ const InputPrepTime = ({ accessRef }) => {
                     min="5"
                     max="90"
                     step="5"
-                    defaultValue="5"
+                    defaultValue="90"
                 />
                 <span>minutes or less</span>
             </div>

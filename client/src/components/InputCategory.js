@@ -22,7 +22,7 @@ const InputCategory = ({ accessRef }) => {
 
     useEffect(() => {
         // add database call
-        setSuggestions(['Breakfast', 'Desert', 'High-Protein', 'Main meal', 'Snack', 'Vegetarian', 'Vegan'])
+        setSuggestions(['Breakfast', 'Desert', 'High-Protein', 'Main meal', 'Snack', 'Vegetarian', 'Vegan', 'Pasta', 'Burger', 'Rice'])
     }, [])
 
     useEffect(() => {

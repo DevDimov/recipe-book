@@ -77,7 +77,7 @@
     background-color: var(--orange);
     border-radius: 999px;
     padding: 0.5rem;
-    position: fixed;
+    position: absolute;
     bottom: 10vh;
     right: 10vw;
     display: flex;
@@ -87,6 +87,7 @@
     opacity: 1;
     width: 3.4rem;
     height: 3.4rem;
+    pointer-events: all;
 }
 
 #add-button:hover {

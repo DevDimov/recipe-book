@@ -1,17 +1,15 @@
-import { useEffect, useState, useRef } from 'react'
-import './App.css';
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import RecipeSubmit from './components/RecipeSubmit'
 import Recipes from './components/Recipes';
-import { getRecipes } from './js/mongodb'
 
 function App() {
 
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
-        // fetch('./testData/twoRecipes.json') // for debugging
+        // fetch('./testData/sixRecipes.json') // for debugging
         fetch('/recipes/10')
             .then(res => res.json())
             .then(data => setRecipes(data))

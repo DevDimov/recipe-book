@@ -71,7 +71,7 @@ const searchByName = async (query) => {
         })
         .catch((error) => {
             console.error('Error:', error);
-            return error
+            return []
         })
 }
 

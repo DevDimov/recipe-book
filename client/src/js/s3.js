@@ -9,7 +9,7 @@ const s3GetImage = async (objectKey) => {
         })
         .catch((error) => {
             console.error('Error:', error);
-            return error
+            return { error }
         })
 }
 

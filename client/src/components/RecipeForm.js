@@ -28,7 +28,7 @@ const RecipeForm = ({ toggleForm }) => {
         e.preventDefault();
 
         const formData = new FormData()
-        formData.append('file', image)
+        formData.append('file', image ? image : 'none')
         formData.append('image', image ? image.name : '')
         formData.append('name', nameRef.current.value.trim())
         formData.append('description', descriptionRef.current.value.trim())
@@ -49,7 +49,8 @@ const RecipeForm = ({ toggleForm }) => {
     }
 
     const validateInput = async (formData) => {
-        if (formData.get('file') === null) {
+
+        if (formData.get('file') === 'none') {
             setSubmitStatus('Please upload an image')
             return false
         }
@@ -149,7 +150,7 @@ const RecipeForm = ({ toggleForm }) => {
                             ref={nameRef}
                             type="text"
                             name="name"
-                            defaultValue='Test'
+                            // defaultValue='Test'
                             placeholder="Enter a unique name for your recipe"
                         />
                     </label>
@@ -161,7 +162,7 @@ const RecipeForm = ({ toggleForm }) => {
                             name="description"
                             rows="5"
                             maxLength="500"
-                            defaultValue='Test description'
+                            // defaultValue='Test description'
                             placeholder="Describe your recipe in a few sentences"
                             required
                         />
@@ -180,7 +181,7 @@ const RecipeForm = ({ toggleForm }) => {
                             rows="10"
                             maxLength="1000"
                             resize="vertical"
-                            defaultValue='Test'
+                            // defaultValue='Test'
                         />
                     </label>
 

@@ -18,13 +18,14 @@ const SearchFilters = ({ toggleSearchFilters, setRecipes }) => {
     const onSearch = async () => {
         const filters = {
             category: categoryRef.current,
-            prepTime: prepTimeRef.current.value,
-            servings: servingsRef.current.value,
+            prepTime: parseInt(prepTimeRef.current.value),
+            servings: parseInt(servingsRef.current.value),
             ingredientMatch: ingredientRef.current.trim()
         }
         // console.log(filters) // for debugging
         const newData = await searchWithFilters(filters)
         if (!newData.error) setRecipes(newData)
+        toggleSearchFilters()
     }
 
     return (

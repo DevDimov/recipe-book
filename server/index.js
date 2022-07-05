@@ -62,7 +62,7 @@ app.get('/images/:key', async (req, res) => {
     // console.log(objectKey)
     try {
         const image = await s3GetObject(objectKey)
-        res.writeHead(200, { 'Content-Type': 'image/jpeg' })
+        // res.writeHead(200, { 'Content-Type': 'image/jpeg' })
         res.end(image) // Send the file data to the browser.
         // return res.send(response)
     } catch (err) {

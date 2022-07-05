@@ -23,42 +23,46 @@ const deleteDocument = async (query) => {
 }
 
 const searchByName = async (query) => {
+    let result = []
     try {
         await client.connect()
         const cursor = client.db("recipe_book").collection("vd_recipes").find({ name: { $regex: query.name, $options: 'i' } })
-        let result = []
         await cursor.forEach(item => result.push(item))
         return result
     } catch (e) {
         console.error(e);
+        return result
     } finally {
         await client.close();
     }
 }
 
 const searchByExactName = async (name) => {
+    let result = []
     try {
         await client.connect()
-        const result = await client.db("recipe_book").collection("vd_recipes").findOne({ name }, { projection: { _id: 1 } })
+        result = await client.db("recipe_book").collection("vd_recipes").findOne({ name }, { projection: { _id: 1 } })
         return result
     } catch (e) {
         console.error(e);
+        return result
     } finally {
         await client.close();
     }
 }
 
 const searchWithFilters = async (filters) => {
+    let result = []
     try {
         await client.connect()
         const query = setQuery(filters)
-        // console.log(query)
+        console.log(query)
         const cursor = client.db("recipe_book").collection("vd_recipes").find(query)
-        let result = []
         await cursor.forEach(item => result.push(item))
         return result
     } catch (e) {
         console.error(e);
+        return result
     } finally {
         await client.close();
     }
@@ -68,9 +72,9 @@ const setQuery = (filters) => {
     let query = {}
     for (let key of Object.keys(filters)) {
         if (key === 'category' && filters[key].length > 0) query[key] = { $all: filters.category }
-        if (key === 'prepTime' && filters[key] > 5) query[key] = { $lte: filters.prepTime }
+        if (key === 'prepTime' && filters[key] < 90) query[key] = { $lte: filters.prepTime }
         if (key === 'servings' && filters[key] > 2) query[key] = { $gte: filters.servings }
-        if (key === 'ingredients' && filters[key].length > 2) query[key] = { $regex: filters.ingredients, $options: 'i' }
+        if (key === 'ingredientMatch' && filters[key].length > 2) query['ingredients'] = { $regex: filters.ingredientMatch, $options: 'i' }
     }
     return query
 }
@@ -82,6 +86,7 @@ const getLatestDocuments = async (limit) => {
         return await cursor.toArray()
     } catch (e) {
         console.error(e);
+        return []
     } finally {
         await client.close();
     }

@@ -6,14 +6,19 @@ const Recipes = ({ data }) => {
     return (
         <div className="recipes">
             {
-                data.map((item) => {
-                    return (
-                        <RecipeCard
-                            key={item._id}
-                            data={item}
-                        />
-                    )
-                })
+                data.length > 0 ?
+                    <>
+                        {
+                            data.map((item) => {
+                                return (
+                                    <RecipeCard
+                                        key={item._id}
+                                        data={item}
+                                    />
+                                )
+                            })
+                        }
+                    </> : <p>No recipes to display</p>
             }
         </div>
     )

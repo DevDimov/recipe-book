@@ -24,7 +24,7 @@ const LabelButtonsSelectable = ({ headerName, accessRef }) => {
 
     useEffect(() => {
         // add call to database
-        setLabels(['Breakfast', 'Desert', 'High-Protein', 'Main meal', 'Snack', 'Vegetarian', 'Vegan'])
+        setLabels(['Main meal', 'Rice', 'Pasta', 'Burger', 'Vegetarian'])
     }, [])
 
     return (

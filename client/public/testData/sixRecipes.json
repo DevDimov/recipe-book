@@ -18,9 +18,10 @@
     },
     {
         "_id": "62b6c59732d5ff72c87bada6",
-        "name": "Easy Chicken Biryani Easy Chicken Biryani",
+        "name": "Easy Chicken Biryani",
         "category": [
-            "Main meal"
+            "Main meal",
+            "Rice"
         ],
         "description": "Donal Skehan's quick version of this Indian classic results in perfectly cooked rice and moist chicken – just as it should be. As if that wasn’t enough, you only need to use one pan so there’s minimal washing up!",
         "image": "easy-chicken-biryani.jpg",
@@ -55,7 +56,7 @@
         "_id": "62c2bbb588673cb0c1523ef1",
         "image": "carrot-and-chickpea-veggie-burger.jpg",
         "name": "Carrot and Chickpea Veggie Burger",
-        "description": "A healthy street food recipe by Tasty",
+        "description": "A healthy street food recipe by Tasty. It's ideal for vegetarians and contains 11 grams of protein.",
         "category": [
             "Main meal",
             "Burger"
@@ -89,6 +90,39 @@
             "Place a low-sided casserole dish over a medium high heat. Add the oil and fry the onion and carrot for 6 minutes or until the onion are just tender. Add in the spices and fry for another 2-3 minutes.",
             "Stir through the rice, vegetable stock and chickpeas. Bring to a steady simmer before covering with a lid and transferring to the oven to cook for 35 minutes. Fluff up with a fork after half the cooking time.",
             "Once cooked stir through the parsley and a squeeze of lemon juice."
+        ]
+    },
+    {
+        "_id": "62c3f426b2d304159ce77b4f",
+        "image": "chickpea-shawarma-wraps.jpg",
+        "name": "Chickpea Shawarma Sandwich",
+        "description": "Amazing, 30-minute chickpea shawarma sandwich with spicy baked chickpeas, a creamy garlic dill sauce, and lots of fresh vegetables. A healthy, quick, and satisfying plant-based meal!",
+        "category": [
+            "Vegetarian",
+            "Vegan"
+        ],
+        "prepTime": 30,
+        "servings": 2,
+        "ingredients": "CHICKPEAS\r\n425 g can chickpeas (rinsed, drained and patted dry)\r\n15 ml grape seed or avocado oil\r\n1 tsp each cumin and garlic powder\r\n1/2 tsp each sea salt + black pepper\r\n1/2 tsp smoked (or regular) paprika\r\n1/4 tsp each ground coriander + cinnamon\r\n\r\nGARLIC DILL SAUCE\r\n60 g hummus (or tahini*)\r\n15 ml lemon juice (juice of 1/2 lemon as original recipe is written)\r\n3/4-1 tsp dried dill*\r\n9 g garlic (minced)\r\n30-45 ml water or unsweetened almond milk (to thin)\r\nSea salt to taste (optional // I didn’t need any)\r\n\r\nFOR SERVING\r\nVegan pita or flatbread (ensure gluten-free for GF eaters)\r\nSliced tomato (optional)\r\nSliced red onion (optional)\r\nRomaine lettuce or fresh parsley, chopped (optional)\r\nChili garlic sauce (optional)\r\n\r\nNOTES\r\n*If you don’t have hummus, tahini will make a great base substitution for the sauce – just adjust the seasonings to accommodate the lack of flavor tahini provides.\r\n*You can sub 2-3 tsp fresh dill per 3/4-1 tsp dried dill.",
+        "method": [
+            "Preheat oven to 400 degrees F (204 C) and line a large baking sheet (or more if making larger batch) with foil or parchment paper.",
+            "In a small mixing bowl toss rinsed and dried chickpeas with oil and spices and spread on baking sheet. Bake for 25 minutes or until slightly crispy and golden brown. Once slightly cooled",
+            " sample and adjust seasonings as desired (I added a bit more sea salt",
+            " cumin and garlic powder for extra flavor).",
+            "While the chickpeas are roasting",
+            " prepare your sauce by adding hummus",
+            " lemon juice",
+            " dill and garlic to a mixing bowl and whisking to combine. Add enough water or almond milk to thin so it’s pourable.",
+            "Taste and adjust seasonings as needed. Add more garlic for more zing",
+            " salt for savoriness",
+            " lemon juice for freshness",
+            " and dill for a more intense herb flavor. I found mine didn’t need anything else.",
+            "To serve",
+            " warm pitas or flatbread in the microwave for 15-30 seconds (or the still warm oven for 1 minute) and top with desired amount of chickpeas",
+            " sauce",
+            " and vegetables of choice.",
+            "Best when fresh",
+            " though leftover chickpeas and sauce will keep well stored separately in the refrigerator for 3-4 days."
         ]
     }
 ]

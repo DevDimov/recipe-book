@@ -13,7 +13,9 @@ const RecipeSubmit = () => {
         <>
             {
                 showForm ? <RecipeForm toggleForm={toggleForm} /> :
-                    <IconButton customId="add-button" iconPath={addIcon} handleOnClick={toggleForm} />
+                    <div className="overlay">
+                        <IconButton customId="add-button" iconPath={addIcon} handleOnClick={toggleForm} />
+                    </div>
             }
         </>
     )
