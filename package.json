@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server/index.js",
-        "heroku-postbuild": "cd client && npm install && npm run build"
+        "deploy": "cd client && npm install && npm run build"
     },
     "author": "Vlad Dimov",
     "license": "ISC",

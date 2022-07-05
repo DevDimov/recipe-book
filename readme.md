@@ -4,13 +4,17 @@ A minimalist recipe app for storing one's favourite recipes in one place. It use
 
 ## Demo
 
-Deployed on AWS Elastic Beanstalk and available here: https://vd-weatherapp.herokuapp.com/
+Deployed on AWS Elastic Beanstalk with CodePipeline, and available here: http://recipebook-env.eba-74rvuhh4.eu-west-2.elasticbeanstalk.com/
 
-## Screenshot
+## Screenshots
+
+### Home page
 
 ![Home page](https://raw.githubusercontent.com/DevDimov/recipe-book/main/client/public/images/screenshot-recipebook-homepage.jpg "Home page")
 
-![Submit new recipe](https://raw.githubusercontent.com/DevDimov/recipe-book/main/client/public/images/screenshot-recipebook-submit.jpg "Submit new recipe")
+### New recipe submission
+
+![New recipe submission](https://raw.githubusercontent.com/DevDimov/recipe-book/main/client/public/images/screenshot-recipebook-submit.jpg "New recipe submission")
 
 ## Motivation
 
