@@ -19,13 +19,10 @@
 }
 
 .custom-file-input {
-    position: absolute;
-    box-sizing: border-box;
-    opacity: 0;
-    min-height: 2.8rem;
-    margin-inline: auto;
-}
-
-.custom-file-input:hover {
-    cursor: pointer;
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }

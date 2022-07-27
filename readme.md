@@ -4,7 +4,7 @@ A minimalist recipe app for storing one's favourite recipes in one place. It use
 
 ## Demo
 
-Deployed on AWS Elastic Beanstalk with CodePipeline, and available here: http://recipebook-env.eba-74rvuhh4.eu-west-2.elasticbeanstalk.com/
+Deployed on AWS Elastic Beanstalk with CodePipeline. To view and interact with the app via a web browser, please contact me.
 
 ## Screenshots
 

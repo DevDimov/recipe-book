@@ -79,9 +79,7 @@ textarea::placeholder {
     opacity: 1;
     z-index: 1;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
     background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -93,7 +91,7 @@ textarea::placeholder {
     padding: 1.5rem 1.5rem 2rem 1.5rem;
     filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.1));
     max-height: 85%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .overlay {

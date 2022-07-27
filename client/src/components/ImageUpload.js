@@ -9,6 +9,10 @@ const ImageUpload = ({ image, setImage }) => {
 
     const imageRef = useRef()
 
+    const handleOnClick = () => {
+        imageRef.current.click()
+    }
+
     const selectImage = async (e) => {
         e.preventDefault();
 
@@ -48,6 +52,7 @@ const ImageUpload = ({ image, setImage }) => {
                         <ButtonOutlined
                             text="Upload image"
                             iconPath={uploadIcon}
+                            handleOnClick={handleOnClick}
                         />
                         <input
                             ref={imageRef}

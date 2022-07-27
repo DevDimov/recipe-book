@@ -19,6 +19,7 @@ const RecipeCard = ({ data }) => {
         }
         fetchImage()
     }, [data])
+    // comment the above hook when debugging
 
     return (
         <>
